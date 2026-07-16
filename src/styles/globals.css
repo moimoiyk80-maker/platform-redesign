@@ -1,0 +1,45 @@
+:root {
+    font-family:
+      Pretendard,
+      "Noto Sans KR",
+      Arial,
+      sans-serif;
+  
+    color: var(--color-text);
+    background: var(--color-white);
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+  }
+  
+  body {
+    color: var(--color-text);
+    background: var(--color-white);
+  }
+  
+  .site-layout {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  
+  .site-main {
+    flex: 1;
+  }
+  
+  .page-container {
+    width: min(
+      calc(100% - 48px),
+      var(--container-width)
+    );
+    margin: 0 auto;
+  }
+  
+  @media (max-width: 768px) {
+    .page-container {
+      width: min(
+        calc(100% - 32px),
+        var(--container-width)
+      );
+    }
+  }
