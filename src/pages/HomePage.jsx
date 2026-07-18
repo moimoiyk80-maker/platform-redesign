@@ -53,7 +53,7 @@ function HomePage() {
 
             <dl className="home-hero__summary">
               <div>
-                <dt>제품</dt>
+                <dt>취급 제품</dt>
                 <dd>
                   {totalProductCount.toLocaleString()}
                   <span>+</span>
@@ -165,7 +165,7 @@ function HomePage() {
 
                 <div className="category-card__bottom">
                   <span>
-                    {category.productCount.toLocaleString()} Products
+                  {category.productCount.toLocaleString()}+ Items
                   </span>
 
                   <span>

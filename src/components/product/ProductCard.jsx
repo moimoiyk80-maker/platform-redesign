@@ -1,9 +1,16 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
+import { getCategoryById } from "../../data/categories";
 import "./ProductCard.css";
 
 function ProductCard({ product }) {
-  const productPath = `/products/${product.categoryId}/${product.slug}`;
+  const [imageError, setImageError] = useState(false);
+  const category = getCategoryById(product.categoryId);
+
+  const productPath = category
+    ? `/products/${category.slug}/${product.slug}`
+    : "/products";
 
   return (
     <article className="product-card">
@@ -13,19 +20,22 @@ function ProductCard({ product }) {
         aria-label={`${product.nameKo} 상세 보기`}
       >
         <div className="product-card__image">
+        {product.image && !imageError ? (
           <img
             src={product.image}
-            alt={product.imageAlt}
+            alt={product.imageAlt || `${product.nameKo} 제품 이미지`}
             loading="lazy"
-            onError={(event) => {
-              event.currentTarget.style.display = "none";
-            }}
+            onError={() => setImageError(true)}
           />
-
-          <span className="product-card__image-placeholder">
-            Product Image
-          </span>
-        </div>
+        ) : (
+          <div
+            className="product-card__image-placeholder"
+            aria-label={`${product.nameKo} 이미지 준비 중`}
+          >
+            <span aria-hidden="true">Product Image</span>
+          </div>
+        )}
+      </div>
       </Link>
 
       <div className="product-card__body">
@@ -72,14 +82,7 @@ function ProductCard({ product }) {
           >
             제품 상세 보기
             <span aria-hidden="true">→</span>
-          </Link>
-
-          <button
-            type="button"
-            className="product-card__compare-button"
-          >
-            제품 비교
-          </button>
+          </Link>        
         </div>
       </div>
     </article>

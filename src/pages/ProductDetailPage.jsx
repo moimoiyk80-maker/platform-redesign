@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 import { getCategoryBySlug } from "../data/categories";
@@ -8,6 +8,7 @@ import {
 } from "../data/products";
 
 import ProductCard from "../components/product/ProductCard";
+import NotFoundPage from "./NotFoundPage";
 
 import "./ProductDetailPage.css";
 
@@ -15,40 +16,25 @@ function ProductDetailPage() {
   const { categorySlug, productSlug } = useParams();
 
   const product = getProductBySlug(productSlug);
-  const category = getCategoryBySlug(categorySlug);
+  const category = getCategoryBySlug(categorySlug);  
 
-  const [selectedModel, setSelectedModel] = useState(
-    product?.model ?? "",
-  );
+  const [selectedModel, setSelectedModel] = useState("");
+
+  useEffect(() => {
+    const defaultModel =
+      product?.modelOptions?.[0]?.model ??
+      product?.model ??
+      "";
+
+    setSelectedModel(defaultModel);
+  }, [product]);
 
   if (
     !product ||
     !category ||
     product.categoryId !== category.id
   ) {
-    return (
-      <section className="product-not-found">
-        <div className="page-container">
-          <p className="product-not-found__eyebrow">
-            Product Not Found
-          </p>
-
-          <h1>제품 정보를 찾을 수 없습니다.</h1>
-
-          <p>
-            주소를 확인하거나 전체 제품 페이지에서 다시
-            찾아보세요.
-          </p>
-
-          <Link
-            to="/products"
-            className="button button--primary"
-          >
-            전체 제품 보기
-          </Link>
-        </div>
-      </section>
-    );
+    return <NotFoundPage />;
   }
 
   const relatedProducts = getRelatedProducts(product);
@@ -359,7 +345,7 @@ function ProductDetailPage() {
               변경될 수 있습니다.
             </p>
           </div>
-        </section>
+        </section> 
       )}
 
       {product.downloads?.length > 0 && (

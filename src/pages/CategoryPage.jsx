@@ -11,6 +11,7 @@ import {
 } from "../data/resources";
 
 import ProductCard from "../components/product/ProductCard";
+import NotFoundPage from "./NotFoundPage";
 
 import "./CategoryPage.css";
 
@@ -20,29 +21,7 @@ function CategoryPage() {
   const category = getCategoryBySlug(categorySlug);
 
   if (!category) {
-    return (
-      <section className="category-not-found">
-        <div className="page-container">
-          <p className="category-not-found__eyebrow">
-            Category Not Found
-          </p>
-
-          <h1>제품 카테고리를 찾을 수 없습니다.</h1>
-
-          <p>
-            주소를 확인하거나 전체 제품 카테고리에서
-            다시 찾아보세요.
-          </p>
-
-          <Link
-            to="/products"
-            className="button button--primary"
-          >
-            전체 제품 보기
-          </Link>
-        </div>
-      </section>
-    );
+    return <NotFoundPage />;
   }
 
   const categoryProducts = getProductsByCategory(category.id);
@@ -234,10 +213,10 @@ function CategoryPage() {
                               </span>
                             ))}
 
-                          <p>
-                            세부 제품 데이터는 구현 단계에서
-                            확장됩니다.
-                          </p>
+                          <p>다양한 제조사와 규격의 제품을 취급합니다.</p>
+                            <p>
+                              필요한 용도와 사양을 알려주시면 적합한 제품을 제안해 드립니다.
+                            </p>
                         </div>
                       )}
 

@@ -12,6 +12,10 @@
     text-rendering: optimizeLegibility;
   }
   
+  html {
+    scroll-behavior: smooth;
+  }
+  
   body {
     color: var(--color-text);
     background: var(--color-white);

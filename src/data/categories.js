@@ -367,5 +367,11 @@ const categories = [
   
   export const getCategoryBySlug = (slug) =>
     categories.find((category) => category.slug === slug);
+
+  export const getCategoryById = (categoryId) => {
+    return categories.find(
+      (category) => category.id === categoryId,
+    );
+  };
   
   export default categories;

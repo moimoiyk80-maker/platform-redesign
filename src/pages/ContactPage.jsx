@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 
 import categories from "../data/categories";
@@ -75,7 +75,7 @@ function ContactPage() {
   )
     ? queryInquiryType
     : "product";
-
+    
   const [formData, setFormData] = useState({
     ...initialFormState,
     inquiryType: validInquiryType,
@@ -83,6 +83,21 @@ function ContactPage() {
     productId: queryProduct,
     model: queryModel,
   });
+
+  useEffect(() => {
+    setFormData((currentFormData) => ({
+      ...currentFormData,
+      inquiryType: validInquiryType,
+      categoryId: queryCategory,
+      productId: queryProduct,
+      model: queryModel,
+    }));
+  }, [
+    validInquiryType,
+    queryCategory,
+    queryProduct,
+    queryModel,
+  ]);
 
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
@@ -206,13 +221,14 @@ function ContactPage() {
           </div>
 
           <p className="contact-success__eyebrow">
-            Inquiry Submitted
+            Inquiry Preview
           </p>
 
-          <h1>문의가 정상적으로 접수되었습니다.</h1>
+          <h1>문의 내용이 작성되었습니다.</h1>
 
           <p>
-            입력하신 내용을 확인한 뒤 연락처로 안내해 드리겠습니다.
+            입력한 문의 내용을 확인할 수 있는 포트폴리오용 데모 화면입니다.
+            실제 문의는 서버로 전송되지 않습니다.
           </p>
 
           <dl className="contact-success__summary">
@@ -241,9 +257,8 @@ function ContactPage() {
             <button
               type="button"
               className="button button--primary"
-              onClick={resetForm}
             >
-              새 문의 작성
+              문의 내용 확인
             </button>
 
             <Link

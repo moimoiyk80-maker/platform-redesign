@@ -340,6 +340,10 @@
     padding: 104px 0;
     background: var(--color-surface);
   }
+
+  .category-product-group {
+    scroll-margin-top: 120px;
+  }
   
   .category-products__grid {
     display: grid;
