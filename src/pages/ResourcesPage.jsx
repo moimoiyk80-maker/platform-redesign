@@ -166,7 +166,7 @@ function ResourcesPage() {
 
               <input
                 id="resource-search-input"
-                type="text"
+                type="search"
                 value={searchQuery}
                 placeholder="제품명, 모델명 또는 자료 유형을 검색해 주세요."
                 onChange={(event) =>
@@ -184,13 +184,6 @@ function ResourcesPage() {
                   ×
                 </button>
               )}
-
-              <button
-                type="button"
-                className="resources-search__submit"
-              >
-                검색
-              </button>
             </div>
 
             <div className="resources-search-panel__keywords">
@@ -419,13 +412,15 @@ function ResourcesPage() {
                         </div>
                       </div>
 
-                      <button
-                        type="button"
+                      <Link
+                        to={`/contact?type=other&resource=${encodeURIComponent(
+                          resource.titleKo,
+                        )}`}
                         className="resources-list-item__action"
                       >
-                        {resource.actionLabel}
-                        <span aria-hidden="true">↓</span>
-                      </button>
+                        자료 요청
+                        <span aria-hidden="true">→</span>
+                      </Link>
                     </article>
                   ))}
                 </div>
