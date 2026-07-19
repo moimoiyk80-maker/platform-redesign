@@ -8,6 +8,7 @@ import { featuredProducts } from "../data/products";
 import { featuredSupportServices } from "../data/supportServices";
 import { featuredResources } from "../data/resources";
 import { companyProfile } from "../data/company";
+import supportServices from "../data/supportServices";
 
 import ProductCard from "../components/product/ProductCard";
 
@@ -24,15 +25,15 @@ function HomePage() {
             </p>
 
             <h1 className="home-hero__title">
-              연구와 실험에 필요한 제품을
+              연구장비를 더 빠르게
               <br />
-              더 빠르게 찾을 수 있도록
+              탐색하고 검토하세요.
             </h1>
 
             <p className="home-hero__description">
-              기초 실험장비부터 분석·측정장비, 실험기구와
-              소모품까지 연구환경에 필요한 제품과 기술정보를
-              제공합니다.
+            기초 실험장비부터 분석·측정장비,
+            실험기구와 소모품까지 연구환경에 필요한
+            제품 정보와 기술자료를 제공합니다.
             </p>
 
             <div className="home-hero__actions">
@@ -40,14 +41,14 @@ function HomePage() {
                 to="/products"
                 className="button button--primary"
               >
-                제품 둘러보기
+                제품 찾아보기
               </Link>
 
               <Link
                 to="/contact?type=quotation"
                 className="button button--secondary"
               >
-                견적 문의
+                제품 문의
               </Link>
             </div>
 
@@ -69,10 +70,10 @@ function HomePage() {
               </div>
 
               <div>
-                <dt>지원 범위</dt>
+                <dt>지원 서비스</dt>
                 <dd>
-                  제품 선정
-                  <span>부터 운영까지</span>
+                 {supportServices.length}
+                 <span>개 영역</span>
                 </dd>
               </div>
             </dl>
@@ -214,79 +215,276 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="home-support">
+      <section className="home-discovery">
         <div className="page-container">
-          <div className="home-support__header">
+          <div className="section-heading">
             <div>
               <p className="section-heading__eyebrow">
-                Laboratory Support
+                Product Discovery
               </p>
 
-              <h2>실험실 운영 지원</h2>
+              <h2>제품 탐색부터 문의까지</h2>
+
+              <p className="section-heading__description">
+                필요한 제품을 찾고 사양과 자료를 검토한 뒤
+                제품 문의로 이어지는 과정을 제공합니다.
+              </p>
             </div>
-
-            <p>
-              제품 공급을 넘어 실험실 구축, 구매, 설치와
-              운영에 필요한 서비스를 지원합니다.
-            </p>
           </div>
 
-          <div className="support-service-grid">
-            {featuredSupportServices.map((service, index) => (
-              <article
-                key={service.id}
-                className="support-service-card"
-              >
-                <span className="support-service-card__number">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
+          <ol className="discovery-flow">
+            <li className="discovery-flow__item">
+              <span className="discovery-flow__number">
+                01
+              </span>
 
-                <p className="support-service-card__name-en">
-                  {service.nameEn}
+              <div>
+                <p className="discovery-flow__label">
+                  Explore
                 </p>
 
-                <h3>{service.nameKo}</h3>
+                <h3>카테고리 탐색</h3>
 
-                <p className="support-service-card__description">
-                  {service.shortDescription}
+                <p>
+                  장비와 용품을 목적과 제품군에 따라
+                  탐색합니다.
+                </p>
+              </div>
+            </li>
+
+            <li className="discovery-flow__item">
+              <span className="discovery-flow__number">
+                02
+              </span>
+
+              <div>
+                <p className="discovery-flow__label">
+                  Review
                 </p>
 
-                <ul className="support-service-card__scope">
-                  {service.supportScope.slice(0, 3).map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
+                <h3>제품 정보 검토</h3>
 
-                <Link
-                  to={`/contact?type=${service.inquiryType}`}
-                  className="support-service-card__link"
-                >
-                  {service.actionLabel}
-                  <span aria-hidden="true">→</span>
-                </Link>
-              </article>
-            ))}
+                <p>
+                  제품 설명과 주요 사양, 모델 정보를
+                  확인합니다.
+                </p>
+              </div>
+            </li>
+
+            <li className="discovery-flow__item">
+              <span className="discovery-flow__number">
+                03
+              </span>
+
+              <div>
+                <p className="discovery-flow__label">
+                  Resources
+                </p>
+
+                <h3>기술자료 확인</h3>
+
+                <p>
+                  제품 선택과 운영에 필요한 자료를
+                  함께 검토합니다.
+                </p>
+              </div>
+            </li>
+
+            <li className="discovery-flow__item">
+              <span className="discovery-flow__number">
+                04
+              </span>
+
+              <div>
+                <p className="discovery-flow__label">
+                  Inquiry
+                </p>
+
+                <h3>제품 문의</h3>
+
+                <p>
+                  제품과 모델 정보를 포함해 상담을
+                  요청합니다.
+                </p>
+              </div>
+            </li>
+          </ol>
+
+          <div className="home-discovery__actions">
+            <Link
+              to="/products"
+              className="button button--secondary"
+            >
+              제품 탐색 시작
+            </Link>
+
+            <Link
+              to="/contact?type=product"
+              className="button button--secondary"
+            >
+              제품 문의
+            </Link>
           </div>
+        </div>
+      </section>
 
-          <div className="home-support__cta">
+      <section className="home-support">
+        <div className="page-container">
+          <div className="section-heading">
             <div>
-              <h3>
-                실험실 구축과 운영에 필요한 지원이
-                필요하신가요?
-              </h3>
+              <p className="section-heading__eyebrow">
+                Support Services
+              </p>
 
-              <p>
-                제품 선정부터 설치, 구매, 교육 및 유지관리까지
-                필요한 지원 범위를 안내해 드립니다.
+              <h2>제품 선정부터 운영까지 지원합니다.</h2>
+
+              <p className="section-heading__description">
+                연구환경과 사용 목적을 고려해 제품 검토,
+                설치, 교육과 유지관리 과정을 지원합니다.
               </p>
             </div>
 
             <Link
-              to="/contact?type=laboratory-support"
-              className="button button--primary"
+              to="/contact?type=technical-support"
+              className="section-heading__link"
             >
-              지원 서비스 문의
+              기술지원 문의
+              <span aria-hidden="true">→</span>
             </Link>
+          </div>
+
+          <div className="support-service-grid">
+            <article className="support-service-card">
+              <div className="support-service-card__top">
+                <span className="support-service-card__number">
+                  01
+                </span>
+
+                <span
+                  className="support-service-card__icon"
+                  aria-hidden="true"
+                >
+                  ◇
+                </span>
+              </div>
+
+              <div className="support-service-card__content">
+                <p className="support-service-card__label">
+                  Product Selection
+                </p>
+
+                <h3>제품 선정 지원</h3>
+
+                <p>
+                  사용 목적과 필요한 사양을 바탕으로
+                  적합한 제품과 모델을 검토합니다.
+                </p>
+              </div>
+
+              <Link to="/contact?type=product">
+                제품 문의
+                <span aria-hidden="true">→</span>
+              </Link>
+            </article>
+
+            <article className="support-service-card">
+              <div className="support-service-card__top">
+                <span className="support-service-card__number">
+                  02
+                </span>
+
+                <span
+                  className="support-service-card__icon"
+                  aria-hidden="true"
+                >
+                  □
+                </span>
+              </div>
+
+              <div className="support-service-card__content">
+                <p className="support-service-card__label">
+                  Installation
+                </p>
+
+                <h3>설치 및 시운전</h3>
+
+                <p>
+                  장비 설치부터 초기 작동 확인까지
+                  안정적인 도입 과정을 지원합니다.
+                </p>
+              </div>
+
+              <Link to="/contact?type=installation-training">
+                설치 문의
+                <span aria-hidden="true">→</span>
+              </Link>
+            </article>
+
+            <article className="support-service-card">
+              <div className="support-service-card__top">
+                <span className="support-service-card__number">
+                  03
+                </span>
+
+                <span
+                  className="support-service-card__icon"
+                  aria-hidden="true"
+                >
+                  △
+                </span>
+              </div>
+
+              <div className="support-service-card__content">
+                <p className="support-service-card__label">
+                  Technical Support
+                </p>
+
+                <h3>기술지원 및 교육</h3>
+
+                <p>
+                  제품 사용과 운영에 필요한 기술 안내와
+                  사용자 교육을 제공합니다.
+                </p>
+              </div>
+
+              <Link to="/contact?type=technical-support">
+                기술지원 문의
+                <span aria-hidden="true">→</span>
+              </Link>
+            </article>
+
+            <article className="support-service-card">
+              <div className="support-service-card__top">
+                <span className="support-service-card__number">
+                  04
+                </span>
+
+                <span
+                  className="support-service-card__icon"
+                  aria-hidden="true"
+                >
+                  ○
+                </span>
+              </div>
+
+              <div className="support-service-card__content">
+                <p className="support-service-card__label">
+                  Maintenance
+                </p>
+
+                <h3>유지관리</h3>
+
+                <p>
+                  장비의 지속적인 운영을 위한 점검과
+                  유지관리 관련 상담을 지원합니다.
+                </p>
+              </div>
+
+              <Link to="/contact?type=calibration">
+                유지관리 문의
+                <span aria-hidden="true">→</span>
+              </Link>
+            </article>
           </div>
         </div>
       </section>
@@ -296,14 +494,14 @@ function HomePage() {
           <div className="section-heading">
             <div>
               <p className="section-heading__eyebrow">
-                Technical Resources
+                Resources
               </p>
 
-              <h2>제품 자료</h2>
+              <h2>제품 검토에 필요한 자료</h2>
 
               <p className="section-heading__description">
-                제품 선택과 설치, 운영에 필요한 기술자료를
-                확인할 수 있습니다.
+              제품 선택과 설치, 운영에 필요한 가이드와
+              기술자료를 확인하세요.
               </p>
             </div>
 
@@ -341,13 +539,15 @@ function HomePage() {
                 </div>
 
                 <div className="resource-card__footer">
-                  <button
-                    type="button"
+                  <Link
+                    to={`/contact?type=other&resource=${encodeURIComponent(
+                      resource.titleKo
+                    )}`}
                     className="resource-card__action"
                   >
-                    {resource.actionLabel}
-                    <span aria-hidden="true">↓</span>
-                  </button>
+                    자료 요청
+                    <span aria-hidden="true">→</span>
+                  </Link>
 
                   <span className="resource-card__date">
                     {resource.publishedAt}
@@ -367,13 +567,12 @@ function HomePage() {
             </div>
 
             <div className="home-about__stat">
-              <strong>
-                {totalProductCount.toLocaleString()}+
-              </strong>
-
-              <span>
-                Laboratory Products
-              </span>
+            <span>Integrated Support</span>
+            <strong>
+              제품 선정부터 설치와
+              <br />
+              운영 지원까지
+            </strong>
             </div>
           </div>
 
@@ -382,16 +581,15 @@ function HomePage() {
               About SLI Scientific
             </p>
 
-            <h2>{companyProfile.overview.title}</h2>
-
-            {companyProfile.overview.paragraphs.map((paragraph) => (
-              <p
-                key={paragraph}
-                className="home-about__description"
-              >
-                {paragraph}
-              </p>
-            ))}
+            <h2>연구환경에 필요한 제품과
+            <br />
+            지원 서비스를 연결합니다.</h2>        
+              
+              <p className="home-about__description">
+              SLI Scientific은 기초 실험장비부터 분석·측정장비,
+              실험기구와 소모품까지 다양한 제품 정보를 제공하고,
+              사용 목적에 맞는 제품 검토와 도입 과정을 지원합니다.
+            </p>
 
             <ul className="home-about__capabilities">
               {companyProfile.capabilities
@@ -412,7 +610,7 @@ function HomePage() {
               to="/about"
               className="button button--secondary"
             >
-              회사소개 보기
+              회사소개 보기<span aria-hidden="true">→</span>
             </Link>
           </div>
         </div>
@@ -422,35 +620,37 @@ function HomePage() {
         <div className="home-final-cta__inner page-container">
           <div>
             <p className="home-final-cta__eyebrow">
-              Product & Technical Inquiry
+            Product Consultation
             </p>
 
             <h2>
-              연구환경에 적합한 제품을
-              <br />
-              찾고 계신가요?
+            어떤 제품이 적합한지
+            <br />
+            결정하기 어려우신가요?
             </h2>
 
-            <p>
+            <p className="home-final-cta__cont">
               사용 목적과 필요한 사양을 알려주시면
               적합한 제품과 기술자료를 안내해 드립니다.
             </p>
           </div>
 
           <div className="home-final-cta__actions">
-            <Link
-              to="/contact?type=quotation"
-              className="button button--light"
-            >
-              견적 문의
-            </Link>
+          <Link
+            to="/contact?type=product"
+            className="button home-inquiry__primary"
+          >
+            제품 문의
+            <span aria-hidden="true">→</span>
+          </Link>
 
-            <Link
-              to="/products"
-              className="button button--ghost-light"
-            >
-              제품 둘러보기
-            </Link>
+          <Link
+            to="/resources"
+            className="button home-inquiry__primary"
+          >
+            자료실 보기
+            <span aria-hidden="true">→</span>
+          </Link>
           </div>
         </div>
       </section>

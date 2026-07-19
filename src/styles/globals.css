@@ -1,25 +1,28 @@
 :root {
-    font-family:
-      Pretendard,
-      "Noto Sans KR",
-      Arial,
-      sans-serif;
-  
-    color: var(--color-text);
-    background: var(--color-white);
-  
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-  }
-  
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  body {
-    color: var(--color-text);
-    background: var(--color-white);
-  }
+  font-size: 16px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  color: var(--color-text);
+  background: var(--color-white);
+  font-family:
+    "Pretendard",
+    "Noto Sans KR",
+    "Apple SD Gothic Neo",
+    Arial,
+    sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  word-break: keep-all;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
   
   .site-layout {
     display: flex;
@@ -31,12 +34,44 @@
     flex: 1;
   }
   
+  img {
+    display: block;
+    max-width: 100%;
+  }
+  
+  a,
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+  
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  ::selection {
+    color: var(--color-white);
+    background: var(--color-accent);
+  }
+  
   .page-container {
     width: min(
-      calc(100% - 48px),
+      calc(100% - 64px),
       var(--container-width)
     );
     margin: 0 auto;
+  }
+  
+  @media (max-width: 1024px) {
+    .page-container {
+      width: min(
+        calc(100% - 48px),
+        var(--container-width)
+      );
+    }
   }
   
   @media (max-width: 768px) {

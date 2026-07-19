@@ -20,13 +20,16 @@ function ProductDetailPage() {
 
   const [selectedModel, setSelectedModel] = useState("");
 
+  const [imageError, setImageError] = useState(false);
+
   useEffect(() => {
     const defaultModel =
       product?.modelOptions?.[0]?.model ??
       product?.model ??
       "";
-
+  
     setSelectedModel(defaultModel);
+    setImageError(false);
   }, [product]);
 
   if (
@@ -72,17 +75,19 @@ function ProductDetailPage() {
 
           <div className="product-detail-hero__inner">
             <div className="product-detail-gallery">
-              <div className="product-detail-gallery__main">
+            <div className="product-detail-gallery__main">
+              {!imageError && product.image ? (
                 <img
                   src={product.image}
-                  alt={product.imageAlt}
-                  onError={(event) => {
-                    event.currentTarget.style.display = "none";
-                  }}
+                  alt={product.imageAlt || product.nameKo}
+                  onError={() => setImageError(true)}
                 />
-
-                <span>Product Image</span>
-              </div>
+              ) : (
+                <div className="product-detail-gallery__placeholder">
+                  <span>{category.nameEn}</span>
+                </div>
+              )}
+            </div>
 
               <div className="product-detail-gallery__thumbnails">
                 {[1, 2, 3].map((item) => (
@@ -179,12 +184,12 @@ function ProductDetailPage() {
                   견적 문의
                 </Link>
 
-                <button
-                  type="button"
+                <Link
+                  to={`/contact?type=other&product=${product.id}`}
                   className="button button--secondary"
                 >
-                  브로셔 다운로드
-                </button>
+                  제품 자료 요청
+                </Link>
               </div>
 
               <Link
@@ -381,10 +386,15 @@ function ProductDetailPage() {
                     {download.fileType} · {download.fileSize}
                   </p>
 
-                  <button type="button">
-                    {download.actionLabel}
-                    <span aria-hidden="true">↓</span>
-                  </button>
+                  <Link
+                    to={`/contact?type=other&product=${product.id}&resource=${encodeURIComponent(
+                      download.title,
+                    )}`}
+                    className="product-download-item__action"
+                  >
+                    자료 요청
+                    <span aria-hidden="true">→</span>
+                  </Link>
                 </article>
               ))}
             </div>
@@ -446,12 +456,12 @@ function ProductDetailPage() {
               견적 문의
             </Link>
 
-            <button
-              type="button"
+            <Link
+              to={`/contact?type=other&product=${product.id}`}
               className="button button--ghost-light"
             >
-              브로셔 다운로드
-            </button>
+              제품 자료 요청
+            </Link>
           </div>
         </div>
       </section>

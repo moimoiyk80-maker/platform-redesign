@@ -257,18 +257,41 @@ function ProductsPage() {
           {hasActiveFilter && (
             <div className="product-search-results">
               <div className="product-search-results__header">
-                <h2>
-                  검색 결과
-                  <span>{filteredProducts.length}</span>
-                </h2>
+  <div>
+    <p>Search Results</p>
 
-                <button
-                  type="button"
-                  onClick={handleReset}
-                >
-                  검색 초기화
-                </button>
-              </div>
+    <h2>
+      검색 결과
+      <span>{filteredProducts.length}</span>
+    </h2>
+
+    <div className="product-search-results__conditions">
+      {normalizedQuery && (
+        <span>검색어: {searchQuery}</span>
+      )}
+
+      {selectedCategory !== "all" && (
+        <span>
+          카테고리:{" "}
+          {
+            categories.find(
+              (category) =>
+                category.id === selectedCategory,
+            )?.nameKo
+          }
+        </span>
+      )}
+    </div>
+  </div>
+
+  <button
+  type="button"
+  className="button button--secondary"
+  onClick={handleReset}
+>
+  검색 조건 초기화
+</button>
+</div>
 
               {filteredProducts.length > 0 ? (
                 <div className="product-search-results__grid">

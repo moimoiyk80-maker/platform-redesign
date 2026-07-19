@@ -1,6 +1,7 @@
 .site-footer {
-    color: #e5e7eb;
-    background: var(--color-dark);
+  padding: 10px 0 28px;
+  color: rgba(255, 255, 255, 0.72);
+  background: var(--color-dark);
   }
   
   .site-footer__inner {

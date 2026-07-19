@@ -51,10 +51,14 @@ function CategoryPage() {
             </nav>
 
             <p className="category-hero__eyebrow">
-              {category.nameEn}
+              Product Category
             </p>
 
             <h1>{category.nameKo}</h1>
+
+            <p className="category-hero__name-en">
+              {category.nameEn}
+            </p>            
 
             <p className="category-hero__description">
               {category.description}
@@ -62,16 +66,16 @@ function CategoryPage() {
 
             <dl className="category-hero__summary">
               <div>
-                <dt>제품</dt>
+                <dt>취급 제품</dt>
 
                 <dd>
                   {category.productCount.toLocaleString()}
-                  <span>+</span>
+                  <span>+ Items</span>
                 </dd>
               </div>
 
               <div>
-                <dt>제품군</dt>
+                <dt>하위 제품군</dt>
 
                 <dd>
                   {category.subcategories.length}
@@ -80,10 +84,10 @@ function CategoryPage() {
               </div>
 
               <div>
-                <dt>주요 제품</dt>
+                <dt>온라인 대표 제품</dt>
 
                 <dd>
-                  {category.representativeProducts.length}
+                  {categoryProducts.length}
                   <span>개</span>
                 </dd>
               </div>
@@ -213,10 +217,14 @@ function CategoryPage() {
                               </span>
                             ))}
 
-                          <p>다양한 제조사와 규격의 제품을 취급합니다.</p>
-                            <p>
-                              필요한 용도와 사양을 알려주시면 적합한 제품을 제안해 드립니다.
-                            </p>
+                          <p>
+                            다양한 제조사와 규격의 제품을 취급합니다.
+                          </p>
+
+                          <p>
+                            필요한 용도와 사양을 알려주시면
+                            적합한 제품을 제안해 드립니다.
+                          </p>
                         </div>
                       )}
 
@@ -330,10 +338,15 @@ function CategoryPage() {
                       <span>{resource.description}</span>
                     </div>
 
-                    <button type="button">
-                      {resource.actionLabel}
-                      <span aria-hidden="true">↓</span>
-                    </button>
+                    <Link
+                      to={`/contact?type=other&resource=${encodeURIComponent(
+                        resource.titleKo,
+                      )}`}
+                      className="category-resource-card__action"
+                    >
+                      자료 요청
+                      <span aria-hidden="true">→</span>
+                    </Link>
                   </article>
                 ),
               )}
