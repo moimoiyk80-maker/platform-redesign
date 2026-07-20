@@ -1,9 +1,18 @@
+import basicEquipmentImage from "../assets/images/categories/basic-equipment.jpg";
+import analysisEquipmentImage from "../assets/images/categories/analysis-equipment.jpg";
+import cleanEquipmentImage from "../assets/images/categories/clean-equipment.jpg";
+import labwareImage from "../assets/images/categories/labware.jpg";
+import consumablesImage from "../assets/images/categories/consumables.jpg";
+import operationSuppliesImage from "../assets/images/categories/operation-supplies.jpg";
+
 const categories = [
     {
       id: "laboratory-equipment",
       slug: "laboratory-equipment",
       nameKo: "기초 실험장비",
       nameEn: "Laboratory Equipment",
+      image: basicEquipmentImage,
+      imageAlt: "기초실험장비가 배치된 연구실 이미지",
       productCount: 684,
       shortDescription:
         "가열, 교반, 배양, 냉각 및 시료 처리를 위한 실험실 기본 장비",
@@ -65,6 +74,8 @@ const categories = [
       slug: "analytical-instruments",
       nameKo: "분석·측정장비",
       nameEn: "Analytical & Measuring Instruments",
+      image: analysisEquipmentImage,
+      imageAlt: "분석·측정장비가 배치된 연구실 이미지",
       productCount: 527,
       shortDescription:
         "시료의 물리적·화학적 특성을 분석하고 정밀하게 측정하는 장비",
@@ -125,6 +136,8 @@ const categories = [
       slug: "clean-safety-equipment",
       nameKo: "클린·안전장비",
       nameEn: "Clean & Safety Equipment",
+      image: cleanEquipmentImage,
+      imageAlt: "클린·안전장비가 배치된 연구실 이미지",
       productCount: 236,
       shortDescription:
         "작업자, 시료 및 실험 환경을 보호하는 클린·안전 시스템",
@@ -184,6 +197,8 @@ const categories = [
       slug: "labware",
       nameKo: "실험기구",
       nameEn: "Labware",
+      image: labwareImage,
+      imageAlt: "실험기구가 배치된 연구실 이미지",
       productCount: 1248,
       shortDescription:
         "시료 준비, 측정, 보관에 사용되는 유리·플라스틱 실험기구",
@@ -245,6 +260,8 @@ const categories = [
       slug: "consumables",
       nameKo: "실험 소모품",
       nameEn: "Laboratory Consumables",
+      image: consumablesImage,
+      imageAlt: "실험 소모품이 배치된 연구실 이미지",
       productCount: 1576,
       shortDescription:
         "반복적인 실험과 시료 처리에 필요한 튜브, 팁, 필터 및 바이알",
@@ -305,6 +322,8 @@ const categories = [
       slug: "laboratory-supplies",
       nameKo: "실험실 운영용품",
       nameEn: "Laboratory Supplies",
+      image: operationSuppliesImage,
+      imageAlt: "실험실 운영용품이 배치된 연구실 이미지",
       productCount: 418,
       shortDescription:
         "보관, 라벨링, 세척 및 폐기물 관리를 위한 실험실 운영 제품",

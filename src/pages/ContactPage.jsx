@@ -69,6 +69,11 @@ function ContactPage() {
   const queryCategory = searchParams.get("category") ?? "";
   const queryProduct = searchParams.get("product") ?? "";
   const queryModel = searchParams.get("model") ?? "";
+  const queryResource = searchParams.get("resource") ?? "";
+
+  const initialMessage = queryResource
+  ? `다음 자료를 요청합니다.\n\n자료명: ${queryResource}`
+  : "";
 
   const validInquiryType = inquiryTypes.some(
     (type) => type.id === queryInquiryType,
@@ -76,28 +81,34 @@ function ContactPage() {
     ? queryInquiryType
     : "product";
     
-  const [formData, setFormData] = useState({
-    ...initialFormState,
-    inquiryType: validInquiryType,
-    categoryId: queryCategory,
-    productId: queryProduct,
-    model: queryModel,
-  });
-
-  useEffect(() => {
-    setFormData((currentFormData) => ({
-      ...currentFormData,
+    const [formData, setFormData] = useState({
+      ...initialFormState,
       inquiryType: validInquiryType,
       categoryId: queryCategory,
       productId: queryProduct,
       model: queryModel,
-    }));
-  }, [
-    validInquiryType,
-    queryCategory,
-    queryProduct,
-    queryModel,
-  ]);
+      message: initialMessage,
+    });
+
+    useEffect(() => {
+      setFormData((currentFormData) => ({
+        ...currentFormData,
+        inquiryType: validInquiryType,
+        categoryId: queryCategory,
+        productId: queryProduct,
+        model: queryModel,
+        message:
+          queryResource && !currentFormData.message.trim()
+            ? `다음 자료를 요청합니다.\n\n자료명: ${queryResource}`
+            : currentFormData.message,
+      }));
+    }, [
+      validInquiryType,
+      queryCategory,
+      queryProduct,
+      queryModel,
+      queryResource,
+    ]);
 
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
@@ -206,8 +217,11 @@ function ContactPage() {
       categoryId: queryCategory,
       productId: queryProduct,
       model: queryModel,
+      message: queryResource
+        ? `다음 자료를 요청합니다.\n\n자료명: ${queryResource}`
+        : "",
     });
-
+  
     setErrors({});
     setSubmitted(false);
   };
@@ -254,12 +268,13 @@ function ContactPage() {
           </dl>
 
           <div className="contact-success__actions">
-            <button
-              type="button"
-              className="button button--primary"
-            >
-              문의 내용 확인
-            </button>
+          <button
+            type="button"
+            className="button button--primary"
+            onClick={resetForm}
+          >
+            문의 내용 다시 작성
+          </button>
 
             <Link
               to="/products"
@@ -268,6 +283,13 @@ function ContactPage() {
               제품 둘러보기
             </Link>
           </div>
+
+          {queryResource && (
+            <div>
+              <dt>요청 자료</dt>
+              <dd>{queryResource}</dd>
+            </div>
+          )}
 
           <p className="contact-success__notice">
             이 화면은 포트폴리오용 데모이며 실제 문의가 전송되지는
@@ -649,6 +671,7 @@ function ContactPage() {
                     value={formData.message}
                     aria-invalid={Boolean(errors.message)}
                     rows="8"
+                    maxLength={1000}
                     placeholder="사용 목적, 필요한 사양, 수량, 설치 환경 및 희망 일정을 함께 작성해 주세요."
                     onChange={(event) =>
                       updateField("message", event.target.value)

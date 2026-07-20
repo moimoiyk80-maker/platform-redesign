@@ -114,6 +114,11 @@
   box-shadow: var(--shadow-sm);
   font-size: 12px;
 }
+.products-hero__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
   
 .product-search-section {
   position: relative;
@@ -446,6 +451,12 @@
         #e4eef0
       );
     font-size: 11px;
+  }
+
+  .products-category-card__visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   
   .products-category-card__visual > span {

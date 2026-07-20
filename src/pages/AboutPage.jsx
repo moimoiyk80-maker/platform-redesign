@@ -5,6 +5,7 @@ import companyProfile, {
 } from "../data/company";
 
 import "./AboutPage.css";
+import siteImages from "../data/siteImages";
 
 function AboutPage() {
   return (
@@ -42,7 +43,10 @@ function AboutPage() {
           <div className="about-hero__visual">
             <span>Scientific Instruments & Laboratory Supplies</span>
 
-            <strong>Company Visual</strong>
+            <img
+              src={siteImages.about.hero}
+              alt="연구장비 기업의 현대적인 연구시설"
+            />
 
             <div className="about-hero__visual-card">
               <small>Business Scope</small>
@@ -227,7 +231,10 @@ function AboutPage() {
         <div className="about-information__inner page-container">
           <div className="about-information__visual">
             <span>Company & Logistics</span>
-            <strong>Facility Image</strong>
+            <img
+              src={siteImages.about.facility}
+              alt="연구장비와 실험대가 배치된 연구시설"
+            />
           </div>
 
           <div className="about-information__content">

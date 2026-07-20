@@ -20,6 +20,8 @@ function ProductDetailPage() {
 
   const [selectedModel, setSelectedModel] = useState("");
 
+  const [selectedImageIndex, setSelectedImageIndex] =
+  useState(0);
   const [imageError, setImageError] = useState(false);
 
   useEffect(() => {
@@ -31,6 +33,26 @@ function ProductDetailPage() {
     setSelectedModel(defaultModel);
     setImageError(false);
   }, [product]);
+
+  useEffect(() => {
+    setSelectedImageIndex(0);
+    setImageError(false);
+  }, [product]);
+
+  const galleryImages =
+  product.gallery?.length > 0
+    ? product.gallery
+    : [
+        {
+          id: "main",
+          src: product.image,
+          alt: product.imageAlt || product.nameKo,
+        },
+      ];
+
+  const selectedImage =
+    galleryImages[selectedImageIndex] ??
+    galleryImages[0];
 
   if (
     !product ||
@@ -75,33 +97,42 @@ function ProductDetailPage() {
 
           <div className="product-detail-hero__inner">
             <div className="product-detail-gallery">
-            <div className="product-detail-gallery__main">
-              {!imageError && product.image ? (
-                <img
-                  src={product.image}
-                  alt={product.imageAlt || product.nameKo}
+              <div className="product-detail-gallery__main">
+                {!imageError && product.image ? (
+                  <img
+                  src={selectedImage.src}
+                  alt={selectedImage.alt}
                   onError={() => setImageError(true)}
                 />
-              ) : (
-                <div className="product-detail-gallery__placeholder">
-                  <span>{category.nameEn}</span>
-                </div>
-              )}
-            </div>
+                ) : (
+                  <div className="product-detail-gallery__placeholder">
+                    <span>{category.nameEn}</span>
+                  </div>
+                )}
+              </div>
 
               <div className="product-detail-gallery__thumbnails">
-                {[1, 2, 3].map((item) => (
+                {galleryImages.map((image, index) => (
                   <button
-                    key={item}
+                    key={image.id}
                     type="button"
-                    aria-label={`제품 이미지 ${item}`}
                     className={
-                      item === 1
+                      selectedImageIndex === index
                         ? "product-thumbnail product-thumbnail--active"
                         : "product-thumbnail"
                     }
+                    aria-label={`${index + 1}번 제품 이미지 보기`}
+                    aria-pressed={selectedImageIndex === index}
+                    onClick={() => {
+                      setSelectedImageIndex(index);
+                      setImageError(false);
+                    }}
                   >
-                    Image {item}
+                    <img
+                      src={image.src}
+                      alt=""
+                      aria-hidden="true"
+                    />
                   </button>
                 ))}
               </div>

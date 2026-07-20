@@ -14,6 +14,7 @@ import ProductCard from "../components/product/ProductCard";
 import NotFoundPage from "./NotFoundPage";
 
 import "./CategoryPage.css";
+import siteImages from "../data/siteImages";
 
 function CategoryPage() {
   const { categorySlug } = useParams();
@@ -97,7 +98,10 @@ function CategoryPage() {
           <div className="category-hero__visual">
             <span>{category.nameEn}</span>
 
-            <strong>Category Image</strong>
+            <img
+              src={siteImages.category.hero}
+              alt="연구장비 기업의 현대적인 연구시설"
+            />
           </div>
         </div>
       </section>

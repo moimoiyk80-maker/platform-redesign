@@ -13,6 +13,7 @@ import supportServices from "../data/supportServices";
 import ProductCard from "../components/product/ProductCard";
 
 import "./HomePage.css";
+import siteImages from "../data/siteImages";
 
 function HomePage() {
   return (
@@ -80,30 +81,32 @@ function HomePage() {
           </div>
 
           <div
-            className="home-hero__visual"
-            aria-label="연구장비 제품 이미지 영역"
-          >
-            <div className="home-hero__image-placeholder">
-              <span>Hero Product Image</span>
+              className="home-hero__visual"
+              aria-label="연구장비 제품 이미지 영역"
+            >
+              <img
+                src={siteImages.home.hero}
+                alt="연구장비와 실험기구가 배치된 현대적인 연구실"
+                className="home-hero__visual-image"
+              />
+
+              <div className="home-hero__visual-card">
+                <span className="home-hero__visual-label">
+                  Product Discovery
+                </span>
+
+                <strong>
+                  제품명, 모델명 또는
+                  <br />
+                  카테고리로 검색
+                </strong>
+
+                <Link to="/products">
+                  제품 검색 시작
+                  <span aria-hidden="true">→</span>
+                </Link>
+              </div>
             </div>
-
-            <div className="home-hero__visual-card">
-              <span className="home-hero__visual-label">
-                Product Discovery
-              </span>
-
-              <strong>
-                제품명, 모델명 또는
-                <br />
-                카테고리로 검색
-              </strong>
-
-              <Link to="/products">
-                제품 검색 시작
-                <span aria-hidden="true">→</span>
-              </Link>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -135,38 +138,47 @@ function HomePage() {
           <div className="category-grid">
             {categories.map((category, index) => (
               <Link
-                key={category.id}
+                key={category.id ?? category.slug}
                 to={`/products/${category.slug}`}
-                className="category-card"
+                className="home-category-card"
               >
-                <div className="category-card__top">
-                  <span className="category-card__number">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
+                <div className="home-category-card__visual">
+                  <img
+                    src={category.image}
+                    alt={category.imageAlt || `${category.nameKo} 카테고리 이미지`}
+                  />
 
-                  <span
-                    className="category-card__arrow"
-                    aria-hidden="true"
-                  >
-                    ↗
+                  <span className="home-category-card__number">
+                    {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
 
-                <div className="category-card__content">
-                  <p className="category-card__name-en">
-                    {category.nameEn}
-                  </p>
+                <div className="home-category-card__content">
+                  <div className="home-category-card__heading">
+                    <div>
+                      <p className="home-category-card__name-en">
+                        {category.nameEn}
+                      </p>
 
-                  <h3>{category.nameKo}</h3>
+                      <h3>{category.nameKo}</h3>
+                    </div>
 
-                  <p className="category-card__description">
+                    <span
+                      className="home-category-card__arrow"
+                      aria-hidden="true"
+                    >
+                      →
+                    </span>
+                  </div>
+
+                  <p className="home-category-card__description">
                     {category.shortDescription}
                   </p>
                 </div>
 
-                <div className="category-card__bottom">
+                <div className="home-category-card__bottom">
                   <span>
-                  {category.productCount.toLocaleString()}+ Items
+                    {category.productCount.toLocaleString()}+ Items
                   </span>
 
                   <span>
@@ -562,17 +574,18 @@ function HomePage() {
       <section className="home-about">
         <div className="home-about__inner page-container">
           <div className="home-about__visual">
-            <div className="home-about__image-placeholder">
-              <span>Laboratory & Logistics Image</span>
-            </div>
-
+            <img
+                src={siteImages.home.logistics}
+                alt="연구장비와 실험대가 배치된 연구시설"
+              />
+            
             <div className="home-about__stat">
-            <span>Integrated Support</span>
-            <strong>
-              제품 선정부터 설치와
-              <br />
-              운영 지원까지
-            </strong>
+              <span>Integrated Support</span>
+              <strong>
+                제품 선정부터 설치와
+                <br />
+                운영 지원까지
+              </strong>
             </div>
           </div>
 

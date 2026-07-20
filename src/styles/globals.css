@@ -2,13 +2,7 @@
   font-size: 16px;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
-  min-width: 320px;
-  margin: 0;
   color: var(--color-text);
   background: var(--color-white);
   font-family:
@@ -32,11 +26,6 @@ body {
   
   .site-main {
     flex: 1;
-  }
-  
-  img {
-    display: block;
-    max-width: 100%;
   }
   
   a,

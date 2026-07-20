@@ -1,3 +1,33 @@
+import balance01 from "../assets/images/products/analytical-balance-01.jpg";
+import balance02 from "../assets/images/products/analytical-balance-02.jpg";
+import balance03 from "../assets/images/products/analytical-balance-03.jpg";
+import balance04 from "../assets/images/products/analytical-balance-04.jpg";
+
+import stirrer01 from "../assets/images/products/magnetic-stirrer-01.jpg";
+import stirrer02 from "../assets/images/products/magnetic-stirrer-02.jpg";
+import stirrer03 from "../assets/images/products/magnetic-stirrer-03.jpg";
+import stirrer04 from "../assets/images/products/magnetic-stirrer-04.jpg";
+
+import freezer01 from "../assets/images/products/ultra-low-freezer-01.jpg";
+import freezer02 from "../assets/images/products/ultra-low-freezer-02.jpg";
+import freezer03 from "../assets/images/products/ultra-low-freezer-03.jpg";
+import freezer04 from "../assets/images/products/ultra-low-freezer-04.jpg";
+
+import cabinet01 from "../assets/images/products/biological-safety-cabinet-01.jpg";
+import cabinet02 from "../assets/images/products/biological-safety-cabinet-02.jpg";
+import cabinet03 from "../assets/images/products/biological-safety-cabinet-03.jpg";
+import cabinet04 from "../assets/images/products/biological-safety-cabinet-04.jpg";
+
+import cleanbench01 from "../assets/images/products/clean-bench-01.jpg";
+import cleanbench02 from "../assets/images/products/clean-bench-02.jpg";
+import cleanbench03 from "../assets/images/products/clean-bench-03.jpg";
+import cleanbench04 from "../assets/images/products/clean-bench-04.jpg";
+
+import fumehood01 from "../assets/images/products/fume-hood-01.jpg";
+import fumehood02 from "../assets/images/products/fume-hood-02.jpg";
+import fumehood03 from "../assets/images/products/fume-hood-03.jpg";
+import fumehood04 from "../assets/images/products/fume-hood-04.jpg";
+
 const products = [
     {
       id: "biological-safety-cabinet",
@@ -18,8 +48,31 @@ const products = [
       description:
         "작업자, 시료 및 실험 환경을 보호하도록 설계된 Class II Type A2 생물안전작업대입니다.",
   
-      image: "/images/products/biological-safety-cabinet.webp",
-      imageAlt: "SLI Biological Safety Cabinet 생물안전작업대",
+        image: cabinet01,
+        imageAlt: "생물안전작업대 제품 이미지",
+        
+        gallery: [
+          {
+            id: "cabinet-main",
+            src: cabinet01,
+            alt: "생물안전작업대 정면 이미지",
+          },
+          {
+            id: "cabinet-angle",
+            src: cabinet02,
+            alt: "생물안전작업대 측면 이미지",
+          },
+          {
+            id: "cabinet-plate",
+            src: cabinet03,
+            alt: "생물안전작업대 상판 상세 이미지",
+          },
+          {
+            id: "cabinet-control",
+            src: cabinet04,
+            alt: "생물안전작업대 조작부 상세 이미지",
+          },
+        ],
   
       cardSpecs: [
         {
@@ -269,8 +322,31 @@ const products = [
       description:
         "정밀한 온도 제어와 알람 기능으로 연구 및 품질관리 환경의 시료 보관을 지원합니다.",
   
-      image: "/images/products/laboratory-freezer.webp",
-      imageAlt: "SLI Laboratory Freezer 실험실 냉동고",
+        image: freezer01,
+        imageAlt: "실험실 냉동고 제품 이미지",
+        
+        gallery: [
+          {
+            id: "freezer-main",
+            src: freezer01,
+            alt: "실험실 냉동고 정면 이미지",
+          },
+          {
+            id: "freezer-angle",
+            src: freezer02,
+            alt: "실험실 냉동고 측면 이미지",
+          },
+          {
+            id: "freezer-plate",
+            src: freezer03,
+            alt: "실험실 냉동고 상판 상세 이미지",
+          },
+          {
+            id: "freezer-control",
+            src: freezer04,
+            alt: "실험실 냉동고 조작부 상세 이미지",
+          },
+        ],
   
       cardSpecs: [
         {
@@ -316,8 +392,31 @@ const products = [
       description:
         "정밀한 온도와 속도 제어를 통해 반복적인 혼합과 가열 작업을 안정적으로 수행합니다.",
   
-      image: "/images/products/hotplate-stirrer.webp",
-      imageAlt: "SLI Hotplate Stirrer 핫플레이트 스터러",
+        image: stirrer01,
+        imageAlt: "마그네틱 스터러 제품 이미지",
+        
+        gallery: [
+          {
+            id: "stirrer-main",
+            src: stirrer01,
+            alt: "마그네틱 스터러 정면 이미지",
+          },
+          {
+            id: "stirrer-angle",
+            src: stirrer02,
+            alt: "마그네틱 스터러 측면 이미지",
+          },
+          {
+            id: "stirrer-plate",
+            src: stirrer03,
+            alt: "마그네틱 스터러 상판 상세 이미지",
+          },
+          {
+            id: "stirrer-control",
+            src: stirrer04,
+            alt: "마그네틱 스터러 조작부 상세 이미지",
+          },
+        ],
   
       cardSpecs: [
         {
@@ -362,8 +461,31 @@ const products = [
       description:
         "연구개발, 품질관리 및 시험 분석 환경에서 안정적인 정밀 계량을 지원합니다.",
   
-      image: "/images/products/analytical-balance.webp",
-      imageAlt: "SLI Analytical Balance 분석용 전자저울",
+        image: balance01,
+        imageAlt: "전자분석저울 정면 제품 이미지",
+      
+        gallery: [
+          {
+            id: "balance-main",
+            src: balance01,
+            alt: "전자분석저울 정면 이미지",
+          },
+          {
+            id: "balance-angle",
+            src: balance02,
+            alt: "전자분석저울 측면 이미지",
+          },
+          {
+            id: "balance-detail",
+            src: balance03,
+            alt: "전자분석저울 계량부 상세 이미지",
+          },
+          {
+            id: "balance-control",
+            src: balance04,
+            alt: "전자분석저울 조작 패널 상세 이미지",
+          },
+        ],
   
       cardSpecs: [
         {
@@ -409,8 +531,31 @@ const products = [
       description:
         "청정 공기를 일정하게 공급하여 시료와 작업 공간의 오염을 줄이는 실험실용 클린벤치입니다.",
   
-      image: "/images/products/clean-bench.webp",
-      imageAlt: "SLI Clean Bench 클린벤치",
+        image: cleanbench01,
+        imageAlt: "클린벤치 제품 이미지",
+        
+        gallery: [
+          {
+            id: "cleanbench-main",
+            src: cleanbench01,
+            alt: "클린벤치 정면 이미지",
+          },
+          {
+            id: "cleanbench-angle",
+            src: cleanbench02,
+            alt: "클린벤치 측면 이미지",
+          },
+          {
+            id: "cleanbench-plate",
+            src: cleanbench03,
+            alt: "클린벤치 상세 이미지",
+          },
+          {
+            id: "cleanbench-control",
+            src: cleanbench04,
+            alt: "클린벤치 상세 이미지",
+          },
+        ],
   
       cardSpecs: [
         {
@@ -447,8 +592,31 @@ const products = [
       description:
         "화학 실험 과정에서 발생하는 유해 가스와 증기를 외부로 배출하여 작업자의 안전을 지원합니다.",
   
-      image: "/images/products/fume-hood.webp",
-      imageAlt: "SLI Fume Hood 흄후드",
+        image: fumehood01,
+        imageAlt: "흄후드 제품 이미지",
+        
+        gallery: [
+          {
+            id: "fumehood-main",
+            src: fumehood01,
+            alt: "흄후드 정면 이미지",
+          },
+          {
+            id: "fumehood-angle",
+            src: fumehood02,
+            alt: "흄후드 측면 이미지",
+          },
+          {
+            id: "fumehood-plate",
+            src: fumehood03,
+            alt: "흄후드 상세 이미지",
+          },
+          {
+            id: "fumehood-control",
+            src: fumehood04,
+            alt: "흄후드 상세 이미지",
+          },
+        ],
   
       cardSpecs: [
         {

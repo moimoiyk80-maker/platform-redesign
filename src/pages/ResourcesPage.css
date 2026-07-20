@@ -95,6 +95,13 @@
         #dfe5e9,
         #f1f3f5
       );
+    overflow: hidden;  
+  }
+
+  .resources-hero__visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   
   .resources-hero__visual span {
@@ -103,13 +110,6 @@
     font-weight: 700;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-  }
-  
-  .resources-hero__visual strong {
-    align-self: center;
-    margin: auto 0;
-    font-size: 13px;
-    font-weight: 500;
   }
   
   .resources-search-section {

@@ -142,6 +142,13 @@
   .site-footer__bottom p:last-child {
     text-align: right;
   }
+
+  .footer-logo:focus-visible,
+  .site-footer__external a:focus-visible,
+  .site-footer__column a:focus-visible {
+    outline: 3px solid rgba(31, 141, 159, 0.32);
+    outline-offset: 3px;
+  }
   
   @media (max-width: 1024px) {
     .site-footer__inner {

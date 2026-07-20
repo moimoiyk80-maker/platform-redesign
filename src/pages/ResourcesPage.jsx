@@ -8,6 +8,7 @@ import resources, {
 } from "../data/resources";
 
 import "./ResourcesPage.css";
+import siteImages from "../data/siteImages";
 
 function ResourcesPage() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -143,7 +144,10 @@ function ResourcesPage() {
 
           <div className="resources-hero__visual">
             <span>Technical Documents</span>
-            <strong>Resource Visual</strong>
+            <img
+              src={siteImages.resources.hero}
+              alt="제품 브로셔와 기술 문서가 놓인 연구실 데스크"
+            />
           </div>
         </div>
       </section>

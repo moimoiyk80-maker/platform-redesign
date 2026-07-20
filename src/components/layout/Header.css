@@ -158,9 +158,10 @@
 .header-inquiry-link:focus-visible,
 .site-navigation__link:focus-visible,
 .site-logo:focus-visible,
-.mobile-menu-button:focus-visible {
-  outline: 3px solid
-    rgba(31, 141, 159, 0.3);
+.mobile-menu-button:focus-visible,
+.mobile-navigation__link:focus-visible,
+.mobile-navigation__actions a:focus-visible {
+  outline: 3px solid rgba(31, 141, 159, 0.3);
   outline-offset: 3px;
 }
 

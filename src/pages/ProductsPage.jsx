@@ -9,6 +9,7 @@ import products, {
 } from "../data/products";
 import ProductCard from "../components/product/ProductCard";
 import "./ProductsPage.css";
+import siteImages from "../data/siteImages";
 
 function ProductsPage() {
   const [searchInput, setSearchInput] = useState("");
@@ -140,7 +141,10 @@ function ProductsPage() {
           </div>
 
           <div className="products-hero__visual">
-            <span>Product Category Visual</span>
+            <img
+              src={siteImages.products.hero}
+              alt="다양한 연구장비가 배치된 실험실"
+            />
           </div>
         </div>
       </section>
@@ -257,41 +261,41 @@ function ProductsPage() {
           {hasActiveFilter && (
             <div className="product-search-results">
               <div className="product-search-results__header">
-  <div>
-    <p>Search Results</p>
+                <div>
+                  <p>Search Results</p>
 
-    <h2>
-      검색 결과
-      <span>{filteredProducts.length}</span>
-    </h2>
+                  <h2>
+                    검색 결과
+                    <span>{filteredProducts.length}</span>
+                  </h2>
 
-    <div className="product-search-results__conditions">
-      {normalizedQuery && (
-        <span>검색어: {searchQuery}</span>
-      )}
+                  <div className="product-search-results__conditions">
+                    {normalizedQuery && (
+                      <span>검색어: {searchQuery}</span>
+                    )}
 
-      {selectedCategory !== "all" && (
-        <span>
-          카테고리:{" "}
-          {
-            categories.find(
-              (category) =>
-                category.id === selectedCategory,
-            )?.nameKo
-          }
-        </span>
-      )}
-    </div>
-  </div>
+                    {selectedCategory !== "all" && (
+                      <span>
+                        카테고리:{" "}
+                        {
+                          categories.find(
+                            (category) =>
+                              category.id === selectedCategory,
+                          )?.nameKo
+                        }
+                      </span>
+                    )}
+                  </div>
+                </div>
 
-  <button
-  type="button"
-  className="button button--secondary"
-  onClick={handleReset}
->
-  검색 조건 초기화
-</button>
-</div>
+                <button
+                type="button"
+                className="button button--secondary"
+                onClick={handleReset}
+              >
+                검색 조건 초기화
+              </button>
+              </div>
 
               {filteredProducts.length > 0 ? (
                 <div className="product-search-results__grid">
@@ -360,7 +364,10 @@ function ProductsPage() {
                           )}
                         </span>
 
-                        <div>Category Image</div>
+                        <img
+                          src={category.image}
+                          alt={category.imageAlt}
+                        />
                       </div>
 
                       <div className="products-category-card__body">

@@ -8,10 +8,17 @@
     padding: 0 20px;
     font-size: 15px;
     font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
     transition:
       color 160ms ease,
       border-color 160ms ease,
       background-color 160ms ease;
+  }
+
+  .button:focus-visible {
+    outline: 3px solid rgba(31, 141, 159, 0.3);
+    outline-offset: 3px;
   }
   
   .button--primary {
@@ -20,7 +27,7 @@
   }
   
   .button--primary:hover {
-    background: #172f4f;
+    background: var(--color-primary-hover);
   }
   
   .button--secondary {

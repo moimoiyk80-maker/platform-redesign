@@ -50,21 +50,15 @@ function Footer() {
           </p>
 
           <div className="site-footer__external">
-            <a
-              href="#catalog"
-              onClick={(event) => event.preventDefault()}
-            >
-              카탈로그
-              <span aria-hidden="true">↗</span>
-            </a>
+            <Link to="/resources">
+              제품 자료
+              <span aria-hidden="true">→</span>
+            </Link>
 
-            <a
-              href="#shop"
-              onClick={(event) => event.preventDefault()}
-            >
-              쇼핑몰
-              <span aria-hidden="true">↗</span>
-            </a>
+            <Link to="/products">
+              제품 둘러보기
+              <span aria-hidden="true">→</span>
+            </Link>
           </div>
         </div>
 
