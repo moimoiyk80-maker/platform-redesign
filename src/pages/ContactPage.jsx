@@ -303,9 +303,12 @@ function ContactPage() {
   return (
     <>
       <section className="contact-hero">
-        <div className="contact-hero__inner page-container">
-          <div className="contact-hero__content">
-            <p className="contact-hero__eyebrow">
+        <div className="page-container">
+
+         <div className="page-hero__inner ">
+
+          <div className="page-hero__content">
+            <p className="page-hero__eyebrow">
               Product & Technical Inquiry
             </p>
 
@@ -341,6 +344,9 @@ function ContactPage() {
               <p>실제 문의는 전송되지 않습니다.</p>
             </div>
           </div>
+
+         </div>
+
         </div>
       </section>
 

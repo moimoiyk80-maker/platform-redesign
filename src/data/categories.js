@@ -1,9 +1,9 @@
-import basicEquipmentImage from "../assets/images/categories/basic-equipment.jpg";
-import analysisEquipmentImage from "../assets/images/categories/analysis-equipment.jpg";
-import cleanEquipmentImage from "../assets/images/categories/clean-equipment.jpg";
-import labwareImage from "../assets/images/categories/labware.jpg";
-import consumablesImage from "../assets/images/categories/consumables.jpg";
-import operationSuppliesImage from "../assets/images/categories/operation-supplies.jpg";
+import basicEquipmentImage from "../assets/images/categories/basic-equipment.png";
+import analysisEquipmentImage from "../assets/images/categories/analysis-equipment.png";
+import cleanEquipmentImage from "../assets/images/categories/clean-equipment.png";
+import labwareImage from "../assets/images/categories/labware.png";
+import consumablesImage from "../assets/images/categories/consumables.png";
+import operationSuppliesImage from "../assets/images/categories/operation-supplies.png";
 
 const categories = [
     {

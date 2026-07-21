@@ -1,13 +1,13 @@
-import homeHero from "../assets/images/hero/home-hero.jpg";
-import productsHero from "../assets/images/hero/products-hero.jpg";
-import resourcesHero from "../assets/images/hero/resources-hero.jpg";
-import aboutHero from "../assets/images/hero/about-hero.jpg";
-import categoryHero from "../assets/images/hero/category-hero.jpg";
+import homeHero from "../assets/images/hero/home-hero.png";
+import productsHero from "../assets/images/hero/products-hero.png";
+import resourcesHero from "../assets/images/hero/resources-hero.png";
+import aboutHero from "../assets/images/hero/about-hero.png";
+import categoryHero from "../assets/images/hero/category-hero.png";
 
-import aboutFacility from "../assets/images/company/about-facility.jpg";
-import homeLogistics from "../assets/images/company/home-logistics.jpg";
+import aboutFacility from "../assets/images/company/about-facility.png";
+import homeLogistics from "../assets/images/company/home-logistics.png";
 
-import catalogPreview from "../assets/images/resources/catalog-preview.jpg";
+import catalogPreview from "../assets/images/resources/catalog-preview.png";
 
 const siteImages = {
   home: {

@@ -93,10 +93,13 @@ function ResourcesPage() {
 
   return (
     <>
-      <section className="resources-hero">
-        <div className="resources-hero__inner page-container">
-          <div className="resources-hero__content">
-            <p className="resources-hero__eyebrow">
+      <section className="page-hero">
+        <div className="page-container">
+
+        <div className="page-hero__inner">
+
+          <div className="page-hero__content">
+            <p className="page-hero__eyebrow">
               Technical Resources
             </p>
 
@@ -106,7 +109,7 @@ function ResourcesPage() {
               자료를 확인해 보세요.
             </h1>
 
-            <p className="resources-hero__description">
+            <p className="page-hero__description">
               브로셔, 기술 사양서, 사용설명서와 제품 선택
               가이드까지 제품 검토와 설치에 필요한 자료를
               제공합니다.
@@ -142,13 +145,15 @@ function ResourcesPage() {
             </dl>
           </div>
 
-          <div className="resources-hero__visual">
-            <span>Technical Documents</span>
+          <div className="page-hero__visual">
             <img
               src={siteImages.resources.hero}
               alt="제품 브로셔와 기술 문서가 놓인 연구실 데스크"
             />
           </div>
+
+         </div>
+
         </div>
       </section>
 

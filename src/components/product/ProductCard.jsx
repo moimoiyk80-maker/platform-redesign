@@ -19,7 +19,7 @@ function ProductCard({ product }) {
         className="product-card__image-link"
         aria-label={`${product.nameKo} 상세 보기`}
       >
-        <div className="product-card__image">
+     <div className="product-card__image">
         {product.image && !imageError ? (
           <img
             src={product.image}
@@ -34,6 +34,11 @@ function ProductCard({ product }) {
           >
             <span aria-hidden="true">Product Image</span>
           </div>
+        )}
+        {product.isFeaturedDetail && (
+          <span className="product-card__detail-badge">
+            상세 설계 대표 사례
+          </span>
         )}
       </div>
       </Link>

@@ -94,10 +94,13 @@ function ProductsPage() {
 
   return (
     <>
-      <section className="products-hero">
-        <div className="products-hero__inner page-container">
-          <div className="products-hero__content">
-            <p className="products-hero__eyebrow">
+      <section className="page-hero">
+        <div className="page-container">
+
+        <div className="page-hero__inner">
+
+          <div className="page-hero__content">
+            <p className="page-hero__eyebrow">
               Product Discovery
             </p>
 
@@ -105,7 +108,7 @@ function ProductsPage() {
               연구환경에 필요한 제품을 찾아보세요.
             </h1>
 
-            <p className="products-hero__description">
+            <p className="page-hero__description">
               기초 실험장비부터 분석·측정장비,
               실험기구와 소모품까지 제품 종류와 사용
               목적을 기준으로 탐색할 수 있습니다.
@@ -140,12 +143,15 @@ function ProductsPage() {
             </dl>
           </div>
 
-          <div className="products-hero__visual">
+          <div className="page-hero__visual">
             <img
               src={siteImages.products.hero}
               alt="다양한 연구장비가 배치된 실험실"
             />
           </div>
+
+         </div> 
+
         </div>
       </section>
 

@@ -1,32 +1,39 @@
-import balance01 from "../assets/images/products/analytical-balance-01.jpg";
-import balance02 from "../assets/images/products/analytical-balance-02.jpg";
-import balance03 from "../assets/images/products/analytical-balance-03.jpg";
-import balance04 from "../assets/images/products/analytical-balance-04.jpg";
+import balance01 from "../assets/images/products/analytical-balance-01.png";
+import balance02 from "../assets/images/products/analytical-balance-02.png";
+import balance03 from "../assets/images/products/analytical-balance-03.png";
+import balance04 from "../assets/images/products/analytical-balance-04.png";
 
-import stirrer01 from "../assets/images/products/magnetic-stirrer-01.jpg";
-import stirrer02 from "../assets/images/products/magnetic-stirrer-02.jpg";
-import stirrer03 from "../assets/images/products/magnetic-stirrer-03.jpg";
-import stirrer04 from "../assets/images/products/magnetic-stirrer-04.jpg";
+import stirrer01 from "../assets/images/products/magnetic-stirrer-01.png";
+import stirrer02 from "../assets/images/products/magnetic-stirrer-02.png";
+import stirrer03 from "../assets/images/products/magnetic-stirrer-03.png";
+import stirrer04 from "../assets/images/products/magnetic-stirrer-04.png";
 
-import freezer01 from "../assets/images/products/ultra-low-freezer-01.jpg";
-import freezer02 from "../assets/images/products/ultra-low-freezer-02.jpg";
-import freezer03 from "../assets/images/products/ultra-low-freezer-03.jpg";
-import freezer04 from "../assets/images/products/ultra-low-freezer-04.jpg";
+import freezer01 from "../assets/images/products/ultra-low-freezer-01.png";
+import freezer02 from "../assets/images/products/ultra-low-freezer-02.png";
+import freezer03 from "../assets/images/products/ultra-low-freezer-03.png";
+import freezer04 from "../assets/images/products/ultra-low-freezer-04.png";
 
-import cabinet01 from "../assets/images/products/biological-safety-cabinet-01.jpg";
-import cabinet02 from "../assets/images/products/biological-safety-cabinet-02.jpg";
-import cabinet03 from "../assets/images/products/biological-safety-cabinet-03.jpg";
-import cabinet04 from "../assets/images/products/biological-safety-cabinet-04.jpg";
+import cabinet01 from "../assets/images/products/biological-safety-cabinet-01.png";
+import cabinet02 from "../assets/images/products/biological-safety-cabinet-02.png";
+import cabinet03 from "../assets/images/products/biological-safety-cabinet-03.png";
+import cabinet04 from "../assets/images/products/biological-safety-cabinet-04.png";
 
-import cleanbench01 from "../assets/images/products/clean-bench-01.jpg";
-import cleanbench02 from "../assets/images/products/clean-bench-02.jpg";
-import cleanbench03 from "../assets/images/products/clean-bench-03.jpg";
-import cleanbench04 from "../assets/images/products/clean-bench-04.jpg";
+import cleanbench01 from "../assets/images/products/clean-bench-01.png";
+import cleanbench02 from "../assets/images/products/clean-bench-02.png";
+import cleanbench03 from "../assets/images/products/clean-bench-03.png";
+import cleanbench04 from "../assets/images/products/clean-bench-04.png";
 
-import fumehood01 from "../assets/images/products/fume-hood-01.jpg";
-import fumehood02 from "../assets/images/products/fume-hood-02.jpg";
-import fumehood03 from "../assets/images/products/fume-hood-03.jpg";
-import fumehood04 from "../assets/images/products/fume-hood-04.jpg";
+import fumehood01 from "../assets/images/products/fume-hood-01.png";
+import fumehood02 from "../assets/images/products/fume-hood-02.png";
+import fumehood03 from "../assets/images/products/fume-hood-03.png";
+import fumehood04 from "../assets/images/products/fume-hood-04.png";
+
+import cabinetFeature01 from "../assets/images/products/biological-safety-cabinet/features/safety-cabinet-feature-01.png";
+import cabinetFeature02 from "../assets/images/products/biological-safety-cabinet/features/safety-cabinet-feature-02.png";
+import cabinetFeature03 from "../assets/images/products/biological-safety-cabinet/features/safety-cabinet-feature-03.png";
+import cabinetFeature04 from "../assets/images/products/biological-safety-cabinet/features/safety-cabinet-feature-04.png";
+import cabinetFeature05 from "../assets/images/products/biological-safety-cabinet/features/safety-cabinet-feature-05.png";
+import cabinetFeature06 from "../assets/images/products/biological-safety-cabinet/features/safety-cabinet-feature-06.png";
 
 const products = [
     {
@@ -34,6 +41,9 @@ const products = [
       slug: "biological-safety-cabinet",
       categoryId: "clean-safety-equipment",
       subcategoryId: "biological-safety",
+
+      isFeaturedDetail: true,
+      detailBadge: "Representative Detail",
   
       nameEn: "Biological Safety Cabinet",
       nameKo: "생물안전작업대",
@@ -121,48 +131,54 @@ const products = [
         "필터 및 시스템 이상 알람",
       ],
   
-      features: [
+      featureHighlights: [
+        {
+          id: "airflow",
+          title: "안정적인 공기 흐름",
+          description:
+            "균일한 공기 흐름을 통해 시료와 작업자를 보호합니다.",
+          image: cabinetFeature01,
+          imageAlt: "생물안전작업대 공기 흐름 기능 이미지",
+        },
+        {
+          id: "workspace",
+          title: "넓은 작업 공간",
+          description:
+            "스테인리스 작업대를 적용해 청소와 유지관리가 편리합니다.",
+          image: cabinetFeature02,
+          imageAlt: "생물안전작업대 내부 작업 공간 이미지",
+        },
+        {
+          id: "visibility",
+          title: "넓은 작업 시야",
+          description:
+            "투명한 전면창과 측면창으로 작업 과정을 쉽게 확인할 수 있습니다.",
+          image: cabinetFeature03,
+          imageAlt: "생물안전작업대 전면과 측면 유리 이미지",
+        },
         {
           id: "protection",
-          titleEn: "Personnel, Product and Environmental Protection",
-          titleKo: "작업자·시료·환경 보호",
+          title: "작업자 보호 설계",
           description:
-            "수직 층류와 전면 유입 기류를 통해 작업자, 시료 및 실험 환경을 동시에 보호합니다.",
+            "안정적인 흡입 구조로 외부 오염원의 유입을 줄입니다.",
+          image: cabinetFeature04,
+          imageAlt: "생물안전작업대 작업자 보호 구조 이미지",
         },
         {
-          id: "hepa-filtration",
-          titleEn: "HEPA Filtration System",
-          titleKo: "HEPA 필터 시스템",
+          id: "lighting",
+          title: "밝은 내부 조명",
           description:
-            "H14 등급 HEPA 필터를 적용하여 0.3 μm 입자에 대해 99.995% 이상의 집진 효율을 제공합니다.",
+            "작업 공간을 고르게 비추는 조명으로 정밀 작업을 지원합니다.",
+          image: cabinetFeature05,
+          imageAlt: "생물안전작업대 내부 조명 이미지",
         },
         {
-          id: "airflow-control",
-          titleEn: "Stable Airflow Control",
-          titleKo: "안정적인 기류 제어",
+          id: "control",
+          title: "직관적인 제어 패널",
           description:
-            "실시간 풍속 모니터링과 제어 시스템으로 작업 공간의 안정적인 기류 상태를 유지합니다.",
-        },
-        {
-          id: "ergonomic-work-area",
-          titleEn: "Ergonomic Work Area",
-          titleKo: "인체공학적 작업 공간",
-          description:
-            "작업자의 시야와 접근성을 고려한 전면 개방 구조와 넓은 작업 공간을 제공합니다.",
-        },
-        {
-          id: "easy-maintenance",
-          titleEn: "Easy Cleaning and Maintenance",
-          titleKo: "간편한 세척과 유지관리",
-          description:
-            "스테인리스 작업대와 분리 가능한 구조를 적용하여 세척과 유지관리가 용이합니다.",
-        },
-        {
-          id: "safety-monitoring",
-          titleEn: "Integrated Safety Monitoring",
-          titleKo: "통합 안전 모니터링",
-          description:
-            "풍속, 필터 상태, 전면 유리 위치 및 시스템 이상 상태를 화면과 알람으로 안내합니다.",
+            "풍량과 장비 상태를 쉽게 확인할 수 있는 제어 화면을 제공합니다.",
+          image: cabinetFeature06,
+          imageAlt: "생물안전작업대 제어 패널 이미지",
         },
       ],
   
@@ -631,7 +647,7 @@ const products = [
           label: "Control",
           value: "Digital",
         },
-      ],
+      ],      
     },
   ];
   

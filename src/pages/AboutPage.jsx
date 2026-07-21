@@ -10,57 +10,59 @@ import siteImages from "../data/siteImages";
 function AboutPage() {
   return (
     <>
-      <section className="about-hero">
-        <div className="about-hero__inner page-container">
-          <div className="about-hero__content">
-            <p className="about-hero__eyebrow">
-              {companyProfile.hero.eyebrow}
-            </p>
+      <section className="page-hero">
+        <div className="page-container">
 
-            <h1>{companyProfile.hero.title}</h1>
+         <div className="page-hero__inner"> 
 
-            <p className="about-hero__description">
-              {companyProfile.hero.description}
-            </p>
-
-            <div className="about-hero__actions">
-              <Link
-                to={companyProfile.hero.primaryAction.href}
-                className="button button--primary"
-              >
-                {companyProfile.hero.primaryAction.label}
-              </Link>
-
-              <Link
-                to={companyProfile.hero.secondaryAction.href}
-                className="button button--secondary"
-              >
-                {companyProfile.hero.secondaryAction.label}
-              </Link>
-            </div>
-          </div>
-
-          <div className="about-hero__visual">
-            <span>Scientific Instruments & Laboratory Supplies</span>
-
-            <img
-              src={siteImages.about.hero}
-              alt="연구장비 기업의 현대적인 연구시설"
-            />
-
-            <div className="about-hero__visual-card">
-              <small>Business Scope</small>
-
-              <p>
-                제품 개발·제조
-                <br />
-                국내외 유통
-                <br />
-                기술 및 운영 지원
+            <div className="page-hero__content">
+              <p className="page-hero__eyebrow">
+                {companyProfile.hero.eyebrow}
               </p>
+
+              <h1>{companyProfile.hero.title}</h1>
+
+              <p className="page-hero__description">
+                {companyProfile.hero.description}
+              </p>
+
+              <div className="about-hero__actions">
+                <Link
+                  to={companyProfile.hero.primaryAction.href}
+                  className="button button--primary"
+                >
+                  {companyProfile.hero.primaryAction.label}
+                </Link>
+
+                <Link
+                  to={companyProfile.hero.secondaryAction.href}
+                  className="button button--secondary"
+                >
+                  {companyProfile.hero.secondaryAction.label}
+                </Link>
+              </div>
+            </div>          
+
+            <div className="page-hero__visual">
+              <img
+                src={siteImages.about.hero}
+                alt="연구장비 기업의 현대적인 연구시설"
+              />
+              <div className="page-hero__visual-card">
+                <span className="page-hero__visual-label">Business Scope</span>
+                <strong>
+                  제품 개발·제조
+                  <br />
+                  국내외 유통
+                  <br />
+                  기술 및 운영 지원
+                </strong>
+              </div>            
             </div>
-          </div>
+
         </div>
+
+       </div> 
       </section>
 
       <section className="about-overview">

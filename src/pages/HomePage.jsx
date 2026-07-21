@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import categories, {
+import  categories, {
   totalProductCount,
 } from "../data/categories";
 

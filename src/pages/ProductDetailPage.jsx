@@ -29,30 +29,29 @@ function ProductDetailPage() {
       product?.modelOptions?.[0]?.model ??
       product?.model ??
       "";
-  
-    setSelectedModel(defaultModel);
-    setImageError(false);
-  }, [product]);
 
-  useEffect(() => {
+    setSelectedModel(defaultModel);
     setSelectedImageIndex(0);
     setImageError(false);
   }, [product]);
 
   const galleryImages =
-  product.gallery?.length > 0
-    ? product.gallery
-    : [
-        {
-          id: "main",
-          src: product.image,
-          alt: product.imageAlt || product.nameKo,
-        },
-      ];
+    product?.gallery?.length > 0
+      ? product.gallery
+      : product?.image
+        ? [
+            {
+              id: "main",
+              src: product.image,
+              alt: product.imageAlt || product.nameKo,
+            },
+          ]
+        : [];
 
   const selectedImage =
     galleryImages[selectedImageIndex] ??
-    galleryImages[0];
+    galleryImages[0] ??
+    null;
 
   if (
     !product ||
@@ -87,7 +86,7 @@ function ProductDetailPage() {
             <Link to={`/products/${category.slug}`}>
               {category.nameKo}
             </Link>
-
+            
             <span aria-hidden="true">/</span>
 
             <span aria-current="page">
@@ -98,12 +97,12 @@ function ProductDetailPage() {
           <div className="product-detail-hero__inner">
             <div className="product-detail-gallery">
               <div className="product-detail-gallery__main">
-                {!imageError && product.image ? (
+                {!imageError && selectedImage ? (
                   <img
-                  src={selectedImage.src}
-                  alt={selectedImage.alt}
-                  onError={() => setImageError(true)}
-                />
+                    src={selectedImage.src}
+                    alt={selectedImage.alt}
+                    onError={() => setImageError(true)}
+                  />
                 ) : (
                   <div className="product-detail-gallery__placeholder">
                     <span>{category.nameEn}</span>
@@ -139,6 +138,11 @@ function ProductDetailPage() {
             </div>
 
             <div className="product-detail-summary">
+              {product.isFeaturedDetail && (
+              <p className="product-detail-summary__case-label">
+                포트폴리오 대표 상세 설계
+              </p>
+            )}
               <p className="product-detail-summary__category">
                 {category.nameEn}
               </p>
@@ -147,7 +151,7 @@ function ProductDetailPage() {
 
               <p className="product-detail-summary__name-ko">
                 {product.nameKo}
-              </p>
+              </p>             
 
               <p className="product-detail-summary__description">
                 {product.description}
@@ -257,8 +261,8 @@ function ProductDetailPage() {
         </section>
       )}
 
-      {product.features?.length > 0 && (
-        <section className="product-features">
+      {product.featureHighlights?.length > 0 && (
+        <section className="product-feature-highlights">
           <div className="page-container">
             <div className="section-heading">
               <div>
@@ -266,32 +270,32 @@ function ProductDetailPage() {
                   Key Features
                 </p>
 
-                <h2>제품 특징</h2>
+                <h2>제품 주요 기능</h2>
 
                 <p className="section-heading__description">
-                  안정적인 실험과 안전한 작업 환경을 위한
-                  주요 기능을 확인할 수 있습니다.
+                  안전한 연구 환경과 효율적인 작업을 지원하는
+                  핵심 기능입니다.
                 </p>
               </div>
             </div>
 
-            <div className="product-feature-grid">
-              {product.features.map((feature, index) => (
+            <div className="product-feature-highlights__grid">
+              {product.featureHighlights.map((feature) => (
                 <article
                   key={feature.id}
-                  className="product-feature-card"
+                  className="product-feature-highlight"
                 >
-                  <div className="product-feature-card__visual">
-                    <span>
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <strong>Feature Image</strong>
+                  <div className="product-feature-highlight__visual">
+                    <img
+                      src={feature.image}
+                      alt={feature.imageAlt}
+                      loading="lazy"
+                    />
                   </div>
 
-                  <div className="product-feature-card__content">
-                    <p>{feature.titleEn}</p>
-                    <h3>{feature.titleKo}</h3>
-                    <span>{feature.description}</span>
+                  <div className="product-feature-highlight__content">
+                    <h3>{feature.title}</h3>
+                    <p>{feature.description}</p>
                   </div>
                 </article>
               ))}

@@ -31,13 +31,10 @@ function CategoryPage() {
 
   return (
     <>
-      <section className="category-hero">
-        <div className="category-hero__inner page-container">
-          <div className="category-hero__content">
-            <nav
-              className="breadcrumb"
-              aria-label="현재 위치"
-            >
+      <section className="page-hero">
+        <div className="page-container"> 
+          
+            <nav className="page-hero__breadcrumb breadcrumb" aria-label="현재 위치">
               <Link to="/">Home</Link>
 
               <span aria-hidden="true">/</span>
@@ -50,59 +47,63 @@ function CategoryPage() {
                 {category.nameKo}
               </span>
             </nav>
+             
+            <div className="page-hero__inner">
+          
+              <div className="page-hero__content">  
+                  <p className="page-hero__eyebrow">
+                    Product Category
+                  </p>
 
-            <p className="category-hero__eyebrow">
-              Product Category
-            </p>
+                  <h1>{category.nameKo}</h1>
 
-            <h1>{category.nameKo}</h1>
+                  <p className="category-hero__name-en">
+                    {category.nameEn}
+                  </p>            
 
-            <p className="category-hero__name-en">
-              {category.nameEn}
-            </p>            
+                  <p className="page-hero__description">
+                    {category.description}
+                  </p>
 
-            <p className="category-hero__description">
-              {category.description}
-            </p>
+                  <dl className="category-hero__summary">
+                    <div>
+                      <dt>취급 제품</dt>
 
-            <dl className="category-hero__summary">
-              <div>
-                <dt>취급 제품</dt>
+                      <dd>
+                        {category.productCount.toLocaleString()}
+                        <span>+ Items</span>
+                      </dd>
+                    </div>
 
-                <dd>
-                  {category.productCount.toLocaleString()}
-                  <span>+ Items</span>
-                </dd>
+                    <div>
+                      <dt>하위 제품군</dt>
+
+                      <dd>
+                        {category.subcategories.length}
+                        <span>개</span>
+                      </dd>
+                    </div>
+
+                    <div>
+                      <dt>온라인 대표 제품</dt>
+
+                      <dd>
+                        {categoryProducts.length}
+                        <span>개</span>
+                      </dd>
+                    </div>
+                  </dl>
               </div>
 
-              <div>
-                <dt>하위 제품군</dt>
-
-                <dd>
-                  {category.subcategories.length}
-                  <span>개</span>
-                </dd>
+              <div className="page-hero__visual">
+                <img
+                  src={siteImages.category.hero}
+                  alt="연구장비 기업의 현대적인 연구시설"
+                />
               </div>
 
-              <div>
-                <dt>온라인 대표 제품</dt>
+           </div>           
 
-                <dd>
-                  {categoryProducts.length}
-                  <span>개</span>
-                </dd>
-              </div>
-            </dl>
-          </div>
-
-          <div className="category-hero__visual">
-            <span>{category.nameEn}</span>
-
-            <img
-              src={siteImages.category.hero}
-              alt="연구장비 기업의 현대적인 연구시설"
-            />
-          </div>
         </div>
       </section>
 

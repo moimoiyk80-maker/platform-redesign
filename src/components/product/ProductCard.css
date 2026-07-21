@@ -68,6 +68,23 @@
   letter-spacing: 0.04em;
 }
 
+.product-card__visual {
+  position: relative;
+}
+
+.product-card__detail-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 1;
+  padding: 7px 10px;
+  border-radius: 999px;
+  color: var(--color-white);
+  background: rgba(30, 58, 95, 0.92);
+  font-size: 11px;
+  font-weight: 700;
+}
+
 /* Card content */
 
 .product-card__body {
