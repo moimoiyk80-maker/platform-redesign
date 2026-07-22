@@ -3,9 +3,13 @@
 제품 탐색과 기술 검토, 자료 요청 및 문의 흐름을 통합한
 B2B 연구장비 정보 플랫폼 리디자인 프로젝트입니다.
 
+<img
+  src="./readme/hero.png"  alt="SLI Scientific platform hero preview"  width="100%"
+/>
+
 ## Live Demo
 
-- 배포 주소
+https://platform-redesign-five.vercel.app/
 
 ## Project Overview
 
@@ -85,3 +89,33 @@ src/
 
 - [Project Brief](./project-brief.md)
 - [Content & Asset Guide](./docs/content-assets.md)
+
+
+## 📸 Preview
+
+### Home Page
+
+<img src="./readme/home.png" alt="SLI Scientific home page" width="100%" />
+
+### Product
+
+<img src="./readme/product.png" alt="SLI Scientific product page" width="100%" />
+
+### Product Detail
+
+<img src="./readme/productdetail.png" alt="SLI Scientific productdetail page" width="100%" />
+
+### About
+
+<img src="./readme/about.png" alt="SLI Scientific about page" width="100%" />
+
+### Resources
+
+<img src="./readme/resources.png" alt="SLI Scientific resources page" width="100%" />
+
+### Responsive
+
+<img src="./readme/responsive.png" alt="SLI Scientific responsive page" width="100%" />
+
+---
+

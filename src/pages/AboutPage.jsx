@@ -232,7 +232,6 @@ function AboutPage() {
       <section className="about-information">
         <div className="about-information__inner page-container">
           <div className="about-information__visual">
-            <span>Company & Logistics</span>
             <img
               src={siteImages.about.facility}
               alt="연구장비와 실험대가 배치된 연구시설"
