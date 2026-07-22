@@ -322,7 +322,6 @@
     flex-direction: column;
     justify-content: space-between;
     border-radius: var(--radius-xl);
-    padding: 26px;
     color: var(--color-text-muted);
   background:
     linear-gradient(
