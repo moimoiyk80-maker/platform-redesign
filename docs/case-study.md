@@ -1,74 +1,89 @@
 # SLI Scientific Case Study
 
-회사소개 중심의 연구장비 홈페이지를 
-제품 탐색, 기술 검토, 자료 요청과 문의 흐름 중심의 B2B 정보 플랫폼으로 재설계하고
-React로 구현한 프로젝트입니다.
+회사소개 중심의 B2B 사이트를
+제품 탐색, 기술 검토, 자료 확인과 문의 흐름 중심의
+전문 제품 정보 플랫폼으로 재설계한 프로젝트입니다.
 
 ---
 
 ## 1. Project Overview
 
 | 항목 | 내용 |
-|---|---|
+|-----|-----|
 | Project | SLI Scientific |
-| Type | B2B Scientific Equipment Platform Redesign |
-| Role | IA, UI/UX Design, Responsive UI, React Implementation |
-| Stack | React, React Router, Vite, CSS, Vercel |
+| Type | B2B Product Information Platform Redesign |
+| Role | Problem Definition, IA, UI/UX Design, Responsive UI, UI QA |
+| Environment | React, React Router, Vite, CSS, GitHub, Vercel |
 | Scope | Home, Products, Category, Product Detail, Resources, About, Contact |
 | Status | Responsive Web / Deployed |
 
-### Contribution
+### My Contribution
 
-- 프로젝트 방향과 문제 정의
-- 정보구조 및 사용자 탐색 흐름 설계
-- 제품 중심 페이지 구조 설계
-- UI Foundation 및 반응형 규칙 정의
-- React 컴포넌트와 라우팅 구현
-- 제품·카테고리·자료 데이터 구조 설계
+- 프로젝트 방향과 핵심 문제 정의
+- 제품 중심 정보구조와 사용자 탐색 흐름 설계
+- 주요 페이지와 제품 상세 정보 구조 설계
+- UI Foundation과 반응형 기준 정의
+- 제품, 카테고리와 자료 콘텐츠 구조 정리
+- HTML/CSS 퍼블리싱과 반응형 화면 조정
+- 브라우저에서 탐색, 상태 변화와 문의 흐름 검수
 - 이미지와 콘텐츠 에셋 관리
-- Vercel 배포 및 최종 QA
+- GitHub 저장소 관리 및 Vercel 배포
 
 ---
 
 ## 2. Why This Project
 
-현재 재직 중인 B2B 과학장비 기업에서는 국내·해외 홈페이지와 쇼핑몰 등 여러 온라인 채널이 운영되고 있지만, 
-사이트별 역할과 제품 정보가 분산되어 일관된 탐색 경험을 제공하기 어려웠습니다.
+현재 재직 중인 B2B 기업에서는
+여러 웹사이트와 제품 관련 채널이 각각 운영되고 있어,
+사이트별 역할과 제품 정보가 분산되는 문제를 반복적으로 경험했습니다.
 
-웹사이트에도 인쇄 카탈로그 중심의 의사결정이 강하게 적용되어,
-제품 탐색과 기술 검토보다 회사 홍보 콘텐츠가 우선되는 경우가 많았습니다. 
-제한된 환경에서도 반응형 대응과 기본 사용성을 유지하며 실무를 수행했지만, 
-실제 작업물은 보안과 식별 문제로 포트폴리오에 공개할 수 없었습니다.
+웹사이트가 디지털 서비스보다 
+회사 홍보와 카탈로그 콘텐츠를 우선하는 구조로 운영되면서,
+사용자가 제품을 탐색하고 상세 정보를 검토하는 흐름이
+충분히 지원되지 않는 경우가 많았습니다.
 
-이에 현업에서 반복적으로 관찰한 정보구조와 UX 문제를 추출하고,
-회사명·제품 데이터·시각 자산을 모두 비식별화해 
-가상의 브랜드 SLI Scientific으로 재구성했습니다.
+제한된 환경에서도 반응형 대응과 기본 사용성을 유지하며 실무를 수행했지만,
+회사 식별 가능성과 보안 문제로 기존 작업물을 포트폴리오에 공개할 수 없었습니다.
 
-앞선 Minimal Shopping Mall에서 익힌 React UI 구현과
-Frame Design System에서 정리한 시스템 설계 원칙을 바탕으로,
-제품 탐색 중심의 B2B 플랫폼을 독립적으로 설계하고 구현했습니다.
+이에 현업에서 관찰한 정보구조와 사용자 경험 문제를 비식별화하고,
+회사명, 제품 콘텐츠와 시각 자산을 새롭게 구성해
+가상의 브랜드 SLI Scientific 프로젝트로 재구성했습니다.
+
+앞선 Minimal Ecommerce의 반응형 UI 경험과
+Frame Design System의 토큰·컴포넌트 원칙을
+실무형 B2B 문제에 확장해 적용했습니다.
 
 ---
 
 ## 3. Background & Problem
 
-B2B 과학장비 웹사이트에서 사용자의 주요 목적은 회사 연혁이나 홍보 문구를 먼저 확인하는 것이 아니라, 
-자신의 연구 목적과 실험 환경에 적합한 제품을 찾고 기능, 모델과 기술 사양을 검토하는 것입니다.
+실무에서 제품 관련 문의와 웹 콘텐츠를 운영하며 관찰한 결과, 
+전문 제품을 검토하는 B2B 사용자는 회사 연혁이나 홍보 문구보다 
+자신의 목적과 사용 환경에 맞는 제품을 찾고, 
+주요 기능과 모델별 차이, 기술 사양을 비교하는 데 더 집중했습니다.
 
-그러나 실제 업무 환경에서 운영되던 여러 웹사이트는 다음과 같은 구조적 문제를 가지고 있었습니다.
+그러나 기존 운영 환경에서는 제품 정보와 콘텐츠가
+여러 사이트와 채널에 분산되어 있어
+사용자가 필요한 정보를 한 흐름 안에서 검토하기 어려웠습니다.
 
-- 국내·해외 쇼핑몰과 홈페이지 및 기타 사이트들의 역할이 명확하게 구분되지 않음
-- 사이트마다 제품 정보와 콘텐츠 구조가 일관되지 않음
-- 제품 정보보다 회사 홍보와 카탈로그형 콘텐츠가 우선됨
-- 방대한 제품군에 비해 카테고리와 검색 경로가 약함
-- 상세 정보, 기술 자료와 문의 경로가 분리됨
-- 웹사이트가 디지털 서비스보다 인쇄 카탈로그처럼 구성됨
-- 사용자가 여러 사이트를 이동해야 제품 정보를 종합할 수 있음
+주요 문제는 다음과 같이 정리했습니다.
+
+- 여러 웹사이트와 채널 사이에 분산된 제품 정보
+- 채널마다 다른 콘텐츠 구조
+- 제품 탐색보다 회사 홍보와 카탈로그 콘텐츠가 우선되는 구성
+- 다양한 제품군에 비해 부족한 검색과 탐색 경로
+- 제품 상세 정보, 기술 자료와 문의 과정의 분리
+- 일관되지 않은 화면과 모바일 탐색 경험
+- 제품 검토를 위해 여러 페이지와 채널을 이동해야 하는 구조
 
 ### Core Problem
 
-기업이 보여주고 싶은 정보가 사용자가 먼저 확인해야 하는 제품 정보보다 우선되고 있었습니다.
-제품을 사이트의 중심에 배치하고, 회사소개는 제품 검토 과정에서 전문성과 신뢰를 보완하는 역할로 재정의할 필요가 있었습니다.
+기존 구조는 사용자가 제품을 탐색하고 검토하는 순서보다,
+기업 소개와 홍보 콘텐츠를 전달하는 순서를 우선하고 있었습니다.
+
+따라서 제품을 사이트의 중심에 배치하고,
+회사 정보는 제품 검토 과정에서 전문성과 신뢰를 보완하는 역할로
+재정의할 필요가 있었습니다.
 
 ```text
 기존 구조
@@ -84,60 +99,52 @@ B2B 과학장비 웹사이트에서 사용자의 주요 목적은 회사 연혁�
 
 ## 4. Target Users
 
-이 플랫폼의 주요 사용자는 제품을 단순히 둘러보는 일반 소비자가 아니라,
-연구 목적과 실험 환경에 맞는 장비를 검토하고 도입을 판단해야 하는 B2B 사용자입니다.
+실무에서 제품 관련 문의와 콘텐츠를 운영하며 관찰한 업무 흐름을 바탕으로,
+제품 검토 과정에 관여하는 주요 사용자 유형을 다음과 같이 정의했습니다.
 
 ### Researcher / Lab Operator
 
-연구 목적에 적합한 장비를 찾고, 제품의 기능과 기술 사양을 검토하는 사용자입니다.
+사용 목적과 실험 환경에 맞는 제품을 찾고,
+주요 기능과 모델별 차이, 기술 사양을 비교하는 사용자입니다.
 
 주요 요구:
 
-- 연구 분야에 적합한 제품군 탐색
-- 제품 기능과 적용 분야 확인
-- 모델별 차이와 기술 사양 검토
-- 관련 자료와 브로셔 확인
-- 기술 문의 또는 견적 요청
-
-### Purchasing / Facility Manager
-
-제품의 도입 가능성과 운영 조건을 검토하고, 구매 또는 설치 관련 정보를 확인하는 사용자입니다.
-
-주요 요구:
-
-- 제품군과 모델 비교
-- 설치 조건과 주요 사양 확인
-- 제품 자료와 인증 정보 검토
-- 견적 및 납기 문의
-- 기술 지원과 유지관리 범위 확인
+- 사용 목적에 맞는 제품군 탐색
+- 주요 기능과 적용 분야 확인
+- 모델별 차이와 기술 사양 비교
+- 관련 카탈로그와 기술 자료 확인
+- 제품 관련 기술 문의
 
 ### Shared User Need
 
-두 사용자 유형은 담당 업무는 다르지만 다음과 같은 공통 목표를 가지고 있습니다.
+업무 목적에는 차이가 있지만,
+두 사용자 유형 모두 제품 후보를 좁히고 필요한 정보를 검토한 뒤
+문의로 이어지는 공통 흐름을 가집니다.
 
 ```text
-적합한 제품 탐색
+적합한 제품군 탐색
         ↓
-기능과 적용 분야 확인
+주요 기능과 적용 분야 확인
         ↓
-모델 및 기술 사양 검토
+모델별 차이와 기술 사양 비교
         ↓
-자료 확인
+관련 자료 확인
         ↓
-문의 또는 견적 요청
+제품 또는 견적 문의
 ```
 
-따라서 사이트의 정보구조는 기업이 전달하고 싶은 콘텐츠가 아니라,
-사용자의 제품 검토 순서를 중심으로 설계했습니다.
+이에 따라 사이트의 정보구조도 기업이 먼저 전달하고 싶은 콘텐츠보다
+사용자가 제품을 검토하는 순서를 중심으로 설계했습니다.
 
 ---
 
 ## 5. Information Architecture
 
-기존 구조에서는 회사소개, 홍보 콘텐츠와 제품 정보가 여러 사이트에 분산되어 있어 
-사용자가 필요한 정보를 순차적으로 확인하기 어려웠습니다.
+기존 구조에서는 회사소개, 홍보 콘텐츠와 제품 정보의 역할이 명확히 구분되지 않아,
+사용자가 제품 탐색부터 상세 검토와 문의까지 하나의 흐름으로 이어가기 어려웠습니다.
 
-이를 개선하기 위해 제품 탐색을 중심으로 주요 콘텐츠의 역할을 재정의했습니다.
+이를 개선하기 위해 제품 탐색을 중심으로
+각 콘텐츠와 페이지의 역할을 다시 정의했습니다.
 
 ### Before: Fragmented Structure
 
@@ -157,30 +164,34 @@ B2B 과학장비 웹사이트에서 사용자의 주요 목적은 회사 연혁�
   width="100%"
 />
 
-- 구조적 문제만 추상화한 비식별화 와이어프레임입니다.
+- 실제 사이트를 재현한 화면이 아니라,
+  관찰한 구조적 문제만 추상화한 비식별화 와이어프레임입니다.
 
-Corporate Website
+```text
+Corporate Site
 ├─ Company Introduction
 ├─ History
 ├─ Technology
 ├─ Promotional Content
 └─ Limited Product Information
 
-Domestic Shopping Mall
+Product Channel
 ├─ Product List
-├─ Purchase-oriented Content
+├─ Product-focused Content
 └─ Separate Inquiry
 
-Global Website
+Additional Channels
 ├─ Company Information
-├─ Export Content
-└─ Different Product Structure
+├─ Different Product Categories
+└─ Inconsistent Content Structure
+```
 
-사이트마다 역할과 정보 구조가 달라 사용자는 제품을 검토하기 위해
-여러 채널을 이동해야 했습니다.
+채널마다 역할과 정보 구조가 달라,
+사용자는 하나의 제품을 검토하기 위해 여러 페이지와 채널을 이동해야 했습니다.
 
 ### After: Product-Centered Platform
 
+```text
 Home
 ├─ Product Categories
 ├─ Featured Products
@@ -203,21 +214,22 @@ Category
 
 Product Detail
 ├─ Product Gallery
-├─ Key Features
+├─ Product Summary
 ├─ Model Selection
+├─ Key Features
 ├─ Applications
 ├─ Technical Specifications
-├─ Downloads
+├─ Resources
 └─ Inquiry
 
 Resources
 ├─ Catalogs
 ├─ Technical Documents
-└─ Download Information
+└─ Resource Information
 
 About
 ├─ Company Overview
-├─ Manufacturing Capability
+├─ Operating Approach
 └─ Support Scope
 
 Contact
@@ -225,20 +237,22 @@ Contact
 ├─ Technical Inquiry
 ├─ Resource Request
 └─ General Inquiry
+```
 
 ### IA Principle
 
 정보구조는 다음 원칙을 기준으로 설계했습니다.
 
-- 제품군을 최상위 탐색 기준으로 배치
-- 검색과 카테고리 탐색을 병행할 수 있도록 구성
-- 제품 상세 안에서 기능, 모델, 사양과 자료를 연결
-- 제품 검토 이후 문의까지 동일한 흐름 안에서 이어지도록 설계
-- 회사소개는 독립적인 홍보 영역보다 신뢰를 보완하는 정보로 배치
-- 자료실을 제품 검토 과정의 지원 콘텐츠로 정의
+- 제품군을 주요 탐색 기준으로 배치
+- 검색과 카테고리 탐색을 함께 제공
+- 제품 상세 안에서 주요 기능, 모델, 사양과 자료를 연결
+- 제품 검토에서 문의까지 하나의 흐름으로 구성
+- 회사 정보는 제품 검토에 필요한 신뢰 정보를 보완하는 역할로 배치
+- 자료실은 독립적인 홍보 영역이 아니라 제품 검토를 지원하는 콘텐츠로 정의
 
 ### Primary User Flow
 
+```text
 Home
   ↓
 Product Category or Search
@@ -247,11 +261,14 @@ Product List
   ↓
 Product Detail
   ↓
-Model / Specification Review
+Model and Specification Review
   ↓
-Resource Request or Inquiry
+Resource Check or Inquiry
+```
 
-이 흐름을 통해 사용자가 회사소개 페이지를 먼저 거치지 않고도 제품을 탐색하고 검토할 수 있도록 했습니다.
+사용자가 회사소개 페이지를 먼저 거치지 않아도
+제품을 탐색하고 필요한 정보를 검토한 뒤
+자료 확인이나 문의로 이어질 수 있도록 구성했습니다.
 
 ---
 
