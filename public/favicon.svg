@@ -1,0 +1,28 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 64 64"
+  role="img"
+  aria-label="SLI Scientific favicon"
+>
+  <rect
+    width="64"
+    height="64"
+    rx="14"
+    fill="#173B57"
+  />
+
+  <path
+    d="M43 20H28
+       C23 20 20 23 20 27
+       C20 32 23 35 28 35
+       H36
+       C41 35 44 38 44 43
+       C44 47 41 50 36 50
+       H20"
+    fill="none"
+    stroke="#FFFFFF"
+    stroke-width="8"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>
