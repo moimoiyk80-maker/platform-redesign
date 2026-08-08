@@ -84,6 +84,12 @@
     background: var(--color-white);
     font-size: 15px;
   }
+
+  input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+    display: none;
+  }
   
   .resources-search input:focus {
     border-color: var(--color-accent);
@@ -93,7 +99,7 @@
   .resources-search__clear {
     position: absolute;
     top: 50%;
-    right: 108px;
+    right: 20px;
     width: 32px;
     height: 32px;
     border-radius: 50%;
